@@ -1,0 +1,81 @@
+21 hahahhahhahhahahhbdshddbdb
+22 dfjjefkskvdv fddgv
+23 lmvkdfkvjkgb
+24 jjjnn
+25 jkkoooo
+26 sfsgvhfdbc
+27 jjdfkkff
+28 lllll
+29 kknn
+30 jjk
+31 lygj
+32 fgcj
+33 lo
+34 jbikh
+35 fhh
+36 jkll
+37 klokk
+38 fgn
+39 lojl
+40 hjkk
+41 kkkl
+42	Extracting Qualitative Dynamics from Numerical Experiments.
+43	Activity Recognition through Goal-Based Segmentation.
+44	Model Simplification by Asymptotic Order of Magnitude Reasoning.
+45	Generating Global Behaviors using Deep knowledge of Local Dynamics.
+46 Bayesian Inference on Principal Component Analysis Using Reversible Jump Markov Chain Monte Carlo.
+47	Training without data: Knowledge Insertion into RBF Neural Networks.
+48 	Knowledge Extraction from Local Function Networks.
+49 	Description Logic in Practice: A CLASSIC Application.
+50	Opportunistic Processing in Arguments.
+51	Theorem Proving with Structured Theories.
+52	Using Active Connection Graphs for Reasoning with Recursive Rules.
+53	Focus Constraints on Language Generation.
+54	Optimising the Distance Metric in the Nearest Neighbour Algorithm on a Real-World Patient Classification Problem.
+55	Mining Quantitative Maximal Hyperclique Patterns: A Summary of Results.
+56	Optimization of Fuzzy Rules for Classification Using Genetic Algorithm.
+57	Mining of Web-Page Visiting Patterns with Continuous-Time Markov Models.
+58	Technology Trends Analysis from the Internet Resources.
+59	Can We Apply Projection Based Frequent Pattern Mining Paradigm to Spatial Co-location Mining?
+60	Finding Sporadic Rules Using Apriori-Inverse.
+61	An Optimization Problem in Data Cube System Design.
+62	Mining Interesting Imperfectly Sporadic Rules.
+63	Retrieval Based on Language Model with Relative Entropy and Feedback.
+64	Mining E-Commerce Data: The Good, the Bad, and the Ugly.
+65	Extension to C-means Algorithm for the Use of Similarity Functions.
+66	Parallel Knowledge Discovery Using Domain Generalization Graphs.
+67	Generating Actionable Knowledge by Expert-Guided Subgroup Discovery.
+68	Association Rules for Expressing Gradual Dependencies.
+69	Confirmation Rule Sets.
+70	Implication-Based Fuzzy Association Rules.
+71	A Metric for Selection of the Most Promising Rules.
+72	Adaptive Segmentation-Based Symbolic Representations of Time Series for Better Modeling and Lower Bounding Distance Measures.
+73	Minimax TD-Learning with Neural Nets in a Markov Game.
+74	Bayes and Pseudo-Bayes Estimates of Conditional Probabilities and Their Reliability.
+75	Nonrigid Embeddings for Dimensionality Reduction.
+76	Empirical Learning of Natural Language Processing Task.
+77	A Distributed Genetic Algorithm Improving the Generalization Behavior of Neural Networks.
+78	Combined Optimization of Feature Selection and Algorithm Parameters in Machine Learning of Language.
+79	A Reinforcement Learning Algorithm Applied to Simplified Two-Player Texas Hold'em Poker.
+80	Characterizing the Applicability of Classification Algorithms Using Meta-Level Learning.
+81	Multi-Layer Background Subtraction Based on Color and Texture.
+82	Fiber Tract Clustering on Manifolds With Dual Rooted-Graphs.
+83	Probabilistic visibility for multi-view stereo.
+84	Connecting the Out-of-Sample and Pre-Image Problems in Kernel Methods.
+85	Automated Individualization of Deformable Eye Region Model and Its Application to Eye Motion Analysis.
+86	Detailed Human Shape and Pose from Images.
+87	Combining local and global motion models for feature point tracking.
+88	Recognizing Faces of Moving People by Hierarchical Image-Set Matching.
+89	Modulation Domain Template Tracking.
+90	A Variational Bayesian Approach for Classification with Corrupted Inputs.
+91	Commenting Proofs.
+92	A Fuzzy Modal Logic for Belief Functions.
+93	Recognizing Plan/Goal Abandonment.
+94	A Decision-Theoretic Approach to Coordinating Multi-agent Interactions.
+95	An Optimal Scale for Edge Detection.
+96	Elements of a Utilitarian Theory of Knowledge and Action.
+97	An Improved Constraint-Propagation Algorithm for Diagnosis.
+98	Using Multiple Information Sources in a Computational Vision System.
+99	Syntax, Semantics, and Pragmatics in Concert: An Incremental, Multilevel Approach in Reconstructing Task-Oriented Dialogues.
+100	Finding and approximating top-k 
+101 answers in keyword proximity searc
