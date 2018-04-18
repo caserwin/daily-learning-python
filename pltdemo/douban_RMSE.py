@@ -18,7 +18,7 @@ cpcugu_series = pd.Series({
     90: 0.71754,
     100: 0.7169
 })
-cpcugu_series.plot(label='CPSIm', marker='o')
+cpcugu_series.plot(label='SF-H', marker='o')
 
 
 cpc_series = pd.Series({
@@ -33,7 +33,7 @@ cpc_series = pd.Series({
     90: 0.71776,
     100: 0.71678
 })
-cpc_series.plot(label='CPC', marker='^')
+cpc_series.plot(label='CPSim', marker='^')
 
 
 pcc_series = pd.Series({
