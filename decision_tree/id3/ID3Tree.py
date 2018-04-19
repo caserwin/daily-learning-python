@@ -10,11 +10,11 @@ class ID3DTree(object):
         self.dataSet = []  # 数据集
         self.labels = []  # 标签集
 
-    def loadDataSet(self, path, labels):
+    def loadDataSet(self, path, labels, split):
         recordlist = []
         with open(path, "r") as in_file:
             for line in in_file:
-                recordlist.append(line.strip().split("\t"))
+                recordlist.append(line.strip().split(split))
         self.dataSet = recordlist
         self.labels = labels
 
@@ -27,6 +27,8 @@ class ID3DTree(object):
         cateList = [data[-1] for data in dataSet]
         if cateList.count(cateList[0]) == len(cateList):
             return cateList[0]
+        if len(dataSet[0]) == 1:
+            return self.maxCate(cateList)
         # 核心算法
         bestFeat = self.getBestFeat(dataSet)
         bestFeatLabel = labels[bestFeat]
@@ -42,6 +44,11 @@ class ID3DTree(object):
             subTree = self.buildTree(splitDataset, subLabels)  # 构建子树
             tree[bestFeatLabel][value] = subTree
         return tree
+
+    # 计算出现次数最多的类别标签
+    def maxCate(self, catelist):
+        items = dict([(catelist.count(i), i) for i in catelist])
+        return items[max(items.keys())]
 
     # 计算信息熵
     def computeEntropy(self, dataSet):  # 计算香农熵

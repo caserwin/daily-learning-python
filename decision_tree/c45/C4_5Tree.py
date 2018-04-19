@@ -10,11 +10,11 @@ class C4_5DTree(object):
         self.dataSet = []  # 数据集
         self.labels = []  # 标签集
 
-    def loadDataSet(self, path, labels):
+    def loadDataSet(self, path, labels, split):
         recordlist = []
         with open(path, "r") as in_file:
             for line in in_file:
-                recordlist.append(line.strip().split("\t"))
+                recordlist.append(line.strip().split(split))
         self.dataSet = recordlist
         self.labels = labels
 
@@ -26,6 +26,8 @@ class C4_5DTree(object):
         cateList = [data[-1] for data in dataSet]
         if cateList.count(cateList[0]) == len(cateList):
             return cateList[0]
+        if len(dataSet[0]) == 1:
+            return self.maxCate(cateList)
         bestFeat, featValueList = self.getBestFeat(dataSet)
         bestFeatLabel = labels[bestFeat]
         tree = {bestFeatLabel: {}}
@@ -37,13 +39,17 @@ class C4_5DTree(object):
             tree[bestFeatLabel][value] = subTree
         return tree
 
+    # 计算出现次数最多的类别标签
+    def maxCate(self, catelist):
+        items = dict([(catelist.count(i), i) for i in catelist])
+        return items[max(items.keys())]
+
     # 计算信息熵
     def computeEntropy(self, dataSet):  # 计算香农熵
         datalen = float(len(dataSet))
         cateList = [data[-1] for data in dataSet]  # 从数据集中得到类别标签
         # 得到类别为key、出现次数value的字典
         items = dict([(i, cateList.count(i)) for i in cateList])  # 用法不错
-        #		print(items)
         infoEntropy = 0.0
         for key in items:
             prob = float(items[key]) / datalen
@@ -63,12 +69,11 @@ class C4_5DTree(object):
 
     # 计算划分信息
     def computeSplitInfo(self, featureVList):
-        numEntries = len(featureVList)  # 1024,1024,540...
-        #		print(numEntries)
+        numEntries = len(featureVList)
         featureValueSetList = list(
-            set(featureVList))  # ['0', '1', '2']
-        valueCounts = [featureVList.count(featVec) for featVec in featureValueSetList]  # [384, 256, 384]
-        pList = [float(item) / numEntries for item in valueCounts]  # [0.375, 0.25, 0.375]
+            set(featureVList))
+        valueCounts = [featureVList.count(featVec) for featVec in featureValueSetList]
+        pList = [float(item) / numEntries for item in valueCounts]
         lList = [item * math.log(item, 2) for item in pList]
         splitInfo = -sum(lList)
         return splitInfo, featureValueSetList
@@ -94,7 +99,10 @@ class C4_5DTree(object):
                 resultGain += (appearNum / totality) * subEntropy
             ConditionEntropy.append(resultGain)
         infoGainArray = BaseEntropy * ones(Num_Feats) - array(ConditionEntropy)
-        infoGainRatio = infoGainArray / (array(splitInfo) + (-inf))
+        # infoGainRatio = infoGainArray / array(splitInfo)
+        infoGainRatio = array([0 if j == 0 else i / j for i, j in zip(infoGainArray, splitInfo)])
+        print(infoGainRatio)
+
         bestFeatureIndex = argsort(-infoGainRatio)[0]
         return bestFeatureIndex, allFeatVList[bestFeatureIndex]
 

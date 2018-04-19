@@ -17,8 +17,8 @@ douban_cpc_RMSE = pd.Series([0.73468, 0.72431, 0.72111, 0.71712, 0.71342, 0.7183
 douban_ugu_MAE = (douban_cpcUgu_MAE - 0.4 * douban_cpc_MAE) / 0.6
 douban_ugu_RMSE = (douban_cpcUgu_RMSE - 0.4 * douban_cpc_RMSE) / 0.6
 
-print 'MAE\t\t', ' '.join(str(e) for e in douban_ugu_MAE.values)
-print 'RMSE\t', ' '.join(str(e) for e in douban_ugu_RMSE.values)
+print('MAE\t\t', ' '.join(str(e) for e in douban_ugu_MAE.values))
+print('RMSE\t', ' '.join(str(e) for e in douban_ugu_RMSE.values))
 
 
 # print '0.1*cpc+0.9*ugu'
