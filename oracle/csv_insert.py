@@ -5,19 +5,16 @@ import pandas as pd
 
 class OracleService:
     def __init__(self):
-        self.conn = cx_Oracle.connect('WBXDIAGNS/pass@10.29.42.50/teodb.webex.com')
+        self.conn = cx_Oracle.connect('WBXDIAGNS/pass@10.29.42.xx/xx.yy.com')
         self.cur = self.conn.cursor()
-
-    # def create_table(self):
-
 
     def insert(self, meetingDF, participantDF, day):
         sql = "SELECT count(*) as count from DAP_JMFUSER WHERE DATATIME='" + day + "'"
-        print sql
+        print(sql)
         self.cur.execute(sql)  # 使用cursor进行各种操作
         dap_jmfuser_row = self.cur.fetchone()
         sql = "SELECT * from DAP_JMFOVERALL WHERE DATATIME='" + day + "'"
-        print sql
+        print(sql)
         self.cur.execute(sql)  # 使用cursor进行各种操作
         dap_jmfoverall_row = self.cur.fetchone()
         self.cur.close()  # 关闭cursor
@@ -30,7 +27,7 @@ if __name__ == '__main__':
 
     files = glob.glob('~/source/csv/userLevelAllInOnedata_AllSites_*')
     for file in files:
-        print file
+        print(file)
 
     # result = pd.concat([pd.read_csv(file, sep="	") for file in files], ignore_index=True)
     # print result.shape

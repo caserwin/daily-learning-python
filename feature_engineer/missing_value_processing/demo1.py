@@ -2,6 +2,7 @@
 # 拉格朗日插值代码
 import pandas as pd  # 导入数据分析库Pandas
 from scipy.interpolate import lagrange  # 导入拉格朗日插值函数
+from functools import reduce
 
 # 构建原始数据
 data = pd.DataFrame([
@@ -61,14 +62,15 @@ def sma_mothod(series, pos, window=5):
     y = y[y.notnull()]
     return reduce(lambda a, b: a + b, y) / len(y)
 
+
 for j in range(len(tmp_data_1)):
     if (tmp_data_1.isnull())[j]:  # 如果为空即插值。
         tmp_data_1[j] = ployinterp_column(tmp_data_1, j)
-        print j, data.loc[j, u'日期'], tmp_data_1[j]
+        print(j, data.loc[j, u'日期'], tmp_data_1[j])
 
-print
+print()
 
 for j in range(len(tmp_data_2)):
     if (tmp_data_2.isnull())[j]:  # 如果为空即插值。
         tmp_data_2[j] = sma_mothod(tmp_data_2, j)
-        print j, data.loc[j, u'日期'], tmp_data_2[j]
+        print(j, data.loc[j, u'日期'], tmp_data_2[j])

@@ -25,9 +25,9 @@ class Client:
             smtp.set_debuglevel(1)
             smtp.sendmail(self.sender, self.receiver, message.as_string())
             smtp.quit()
-            print "send mail succeed"
-        except Exception, ex:
-            print "send mail error : \n", ex
+            print("send mail succeed")
+        except Exception as ex:
+            print("send mail error : \n", ex)
 
 
 class OracleService:
@@ -38,11 +38,11 @@ class OracleService:
 
     def get_data(self, day):
         sql = "SELECT count(*) as count from DAP_JMFUSER WHERE DATATIME='" + day + "'"
-        print sql
+        print(sql)
         self.cur.execute(sql)  # 使用cursor进行各种操作
         dap_jmfuser_row = self.cur.fetchone()
         sql = "SELECT * from DAP_JMFOVERALL WHERE DATATIME='" + day + "'"
-        print sql
+        print(sql)
         self.cur.execute(sql)  # 使用cursor进行各种操作
         dap_jmfoverall_row = self.cur.fetchone()
         self.cur.close()  # 关闭cursor
@@ -59,6 +59,6 @@ if __name__ == '__main__':
 
     msg = 'Date: {0}\n\nDAP_JMFUSER: total number is {1} \n\nDAP_JMFOVERALL: CREATETIME                    DATATIME          JMFUSER       JMFRATE         TOTALATT\n                                {2}         {3}         {4}             {5}             {6}'.format(
         day, count, dap_jmfuser_row[0], dap_jmfuser_row[1], dap_jmfuser_row[2], dap_jmfuser_row[3], dap_jmfuser_row[4])
-    print msg
+    print(msg)
     client = Client()
     client.send_mail(msg)
