@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 from sklearn.datasets import load_iris
 from sklearn.preprocessing import OneHotEncoder, LabelEncoder
+from sklearn.externals import joblib
 
 
 def cate_coding(DF_data):
@@ -32,3 +33,8 @@ if __name__ == '__main__':
 
     # 方式二：通过 OneHotEncoder, LabelEncoder 对类别进行 one - hot 编码
     print(cate_coding(DF_data))
+
+    # 方式三：加载模型的方式
+    # joblib.dump(le, "label1.m")
+    le = joblib.load("label1.m")
+    print(le.transform(["a2", "a2", "a3"]))

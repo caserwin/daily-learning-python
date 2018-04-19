@@ -120,6 +120,7 @@ class C4_5DTree(object):
 
     def storeTree(self, inputTree, filename):
         fw = open(filename, 'wb')
+        # 对象持久化包
         pickle.dump(inputTree, fw)
         fw.close()
 

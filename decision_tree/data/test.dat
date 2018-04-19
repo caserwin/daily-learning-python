@@ -1,0 +1,6 @@
+TRUE,RETURN,Other,Extension,Webex,0
+TRUE,RETURN,Chrome,Extension,Webex,0
+FALSE,RETURN,Chrome,Extension,Spark,0
+TRUE,NEW,Chrome,Extension,Spark,1
+TRUE,RETURN,IE,ActiveX,Spark,1
+FALSE,UPDATE,IE,ActiveX,Webex,1
