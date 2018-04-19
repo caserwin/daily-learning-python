@@ -1,7 +1,7 @@
 import os
 pid = os.getpid()
-print pid
+print(pid)
 
 
 import psutil
-print psutil.pids()
+print(psutil.pids())
