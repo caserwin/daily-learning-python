@@ -18,7 +18,7 @@ if __name__ == '__main__':
 
     dtree.train()
     print(dtree.tree)
-    print(json.dumps(dtree.tree, ensure_ascii=False))
+    # print(json.dumps(dtree.tree, ensure_ascii=False))
 
     tp.createPlot(dtree.tree)
 
