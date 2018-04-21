@@ -2,7 +2,7 @@
 
 ## 如图
 
-<div align=center><img width="150" height="100" src="https://github.com/caserwin/daily-learning-python/tree/master/decision_tree/data/pic/dt_pic.png"/></div>
+<div align=center><img width="150" height="100" src="https://github.com/caserwin/daily-learning-python/raw/master/decision_tree/data/pic/dt_pic.png"/></div>
 
 
 ## 参考
