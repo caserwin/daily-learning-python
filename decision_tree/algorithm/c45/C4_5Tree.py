@@ -101,8 +101,6 @@ class C4_5DTree(object):
         infoGainArray = BaseEntropy * ones(Num_Feats) - array(ConditionEntropy)
         # infoGainRatio = infoGainArray / array(splitInfo)
         infoGainRatio = array([0 if j == 0 else i / j for i, j in zip(infoGainArray, splitInfo)])
-        print(infoGainRatio)
-
         bestFeatureIndex = argsort(-infoGainRatio)[0]
         return bestFeatureIndex, allFeatVList[bestFeatureIndex]
 

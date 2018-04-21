@@ -1,14 +1,17 @@
-ls =[]
+ls = []
 
 ls.append("a")
 print(ls)
 
 print(4 % 2 == 0)
-i=0
-print(i+1)
+i = 0
+print(i + 1)
 #
 a = [1, 2, 3, 4, 5]
 b = [2, 2, 2, 0, 5]
+
+print("==", a[len(a) - 1])
+print(a.pop())
 
 # zip demo
 c = [i + j for i, j in zip(a, b)]
