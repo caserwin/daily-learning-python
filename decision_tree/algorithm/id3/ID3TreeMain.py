@@ -1,5 +1,7 @@
 from decision_tree.algorithm.id3.ID3Tree import *
 from decision_tree.util.explain.result_explain import TreeExplain
+import decision_tree.util.draw.treePlotter as tp
+import json
 
 if __name__ == '__main__':
     dtree = ID3DTree()
@@ -16,18 +18,17 @@ if __name__ == '__main__':
     # dtree.loadDataSet("/Users/cisco/workspace/mygit/daily-learning-python/decision_tree/data/dataset_id.dat", labels, ",")
 
     # 训练
-    # dtree.train()
-    # print(json.dumps(dtree.tree, ensure_ascii=False))
+    dtree.train()
 
     # 保存模型
-    # dtree.storeTree(dtree.tree, "ID3_2018-04-18.model")
+    dtree.storeTree(dtree.tree, "ID3_2018-04-18.model")
 
     # 画图
     # tp.createPlot(dtree.tree)
 
     # 读取模型
     model = dtree.grabTree("ID3_2018-04-18.model")
-
+    print(json.dumps(model, ensure_ascii=False))
     # 解释
     tx = TreeExplain()
     tx.explain(model)
@@ -36,6 +37,3 @@ if __name__ == '__main__':
     # 预测
     # vector = ['WINDOWS', 'RETURN', 'IE', 'TRUE']
     # print("真实输出", "no", "  ->  ", "决策树输出", dtree.predict(dtree.tree, labels, vector))
-
-    # # dtree.storeTree(dtree.tree, "data.tree")
-    # # mytree = dtree.grabTree("data.tree")

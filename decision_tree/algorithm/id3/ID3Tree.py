@@ -10,11 +10,11 @@ class ID3DTree(object):
         self.dataSet = []  # 数据集
         self.labels = []  # 标签集
 
-    def loadDataSet(self, path, labels, split):
+    def loadDataSet(self, path, labels, sep):
         recordlist = []
         with open(path, "r") as in_file:
             for line in in_file:
-                recordlist.append(line.strip().split(split))
+                recordlist.append(line.strip().split(sep))
         self.dataSet = recordlist
         self.labels = labels
 
@@ -97,13 +97,12 @@ class ID3DTree(object):
                 bestFeature = i
         return bestFeature
 
-    def predict(self, inputTree, featLabels, testVec):  # 分类器
+    def predict(self, inputTree, featLabels, testVec):
         root = list(inputTree.keys())[0]
-        secondDict = inputTree[root]  # value-子树结构或分类标签
-        featIndex = featLabels.index(root)  # 根节点在分类标签集中的位置
+        secondDict = inputTree[root]
+        featIndex = featLabels.index(root)
         key = testVec[featIndex]
-        valueOfFeat = secondDict[key]  # 易错点valueOfFeat = secondDict[key]
-        print(valueOfFeat)  # {'student': {b'0': b'no', b'1': b'yes'}}
+        valueOfFeat = secondDict[key]
         if isinstance(valueOfFeat, dict):
             classLabel = self.predict(valueOfFeat, featLabels, testVec)  # 递归分类
         else:
