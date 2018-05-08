@@ -1,0 +1,1 @@
+{"class":"org.apache.spark.ml.feature.IndexToString","timestamp":1525794737908,"sparkVersion":"2.3.0","uid":"IndexToString_4ff4bc0d1d30fc726422","paramMap":{"labels":["Mamal","Bird","Fish","Invertebrate","Bug","Reptile","Amphibian"],"outputCol":"predictedLabel","inputCol":"prediction"}}
