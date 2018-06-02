@@ -1,11 +1,21 @@
 import numpy as np
 import plotly.graph_objs as go
+import pandas as pd
 
-matrix = np.array([[16, 3, 28, 0, 18],
-                   [18, 0, 12, 5, 29],
-                   [9, 11, 17, 27, 0],
-                   [19, 0, 31, 11, 12],
-                   [23, 17, 10, 0, 34]], dtype=int)
+# ============================================================
+# 对于不同维度的数据集，以下参数要调整，才能画图
+df = pd.read_csv('./simple1.csv', sep=",", header=None)
+matrix = df.values
+print(matrix)
+
+labels = ['col1', 'col2', 'col3', 'col4', 'col5']
+ideo_colors = ['rgba(244, 109, 167, 0.75)', 'rgba(253, 174, 97, 0.75)', 'rgba(254, 224, 139, 0.75)',
+               'rgba(217, 239, 139, 0.75)', 'rgba(166, 217, 106, 0.75)'
+               ]  # brewer colors with alpha set on 0.75
+
+radii_sribb = [0.4, 0.30, 0.35, 0.39, 0.12]  # these value are set after a few trials
+
+# ============================================================
 
 
 def check_data(data_matrix):
@@ -20,7 +30,6 @@ PI = np.pi
 
 
 def moduloAB(x, a, b):  # maps a real number onto the unit circle identified with
-    # the interval [a,b), b-a=2*PI
     if a >= b:
         raise ValueError('Incorrect interval ends')
     y = (x - a) % (b - a)
@@ -32,8 +41,6 @@ def test_2PI(x):
 
 
 row_sum = [np.sum(matrix[k, :]) for k in range(L)]
-
-# set the gap between two consecutive ideograms
 gap = 2 * PI * 0.005
 ideogram_length = 2 * PI * np.asarray(row_sum) / sum(row_sum) - gap * np.ones(L)
 
@@ -66,13 +73,6 @@ def make_ideogram_arc(R, phi, a=50):
 
 
 z = make_ideogram_arc(1.3, [11 * PI / 6, PI / 17])
-
-labels = ['Emma', 'Isabella', 'Ava', 'Olivia', 'Sophia']
-ideo_colors = ['rgba(244, 109, 67, 0.75)',
-               'rgba(253, 174, 97, 0.75)',
-               'rgba(254, 224, 139, 0.75)',
-               'rgba(217, 239, 139, 0.75)',
-               'rgba(166, 217, 106, 0.75)']  # brewer colors with alpha set on 0.75
 
 
 def map_data(data_matrix, row_value, ideogram_length):
@@ -155,7 +155,7 @@ def make_ribbon_arc(theta0, theta1):
         raise ValueError('the angle coordinates for an arc side of a ribbon must be in [0, 2*pi]')
 
 
-make_ribbon_arc(np.pi / 3, np.pi / 6)
+# make_ribbon_arc(np.pi / 3, np.pi / 6)
 
 
 def make_layout(title, plot_size):
@@ -193,7 +193,6 @@ def invPerm(perm):
 
 
 layout = make_layout('Chord diagram', 400)
-radii_sribb = [0.4, 0.30, 0.35, 0.39, 0.12]  # these value are set after a few trials
 
 ribbon_info = []
 for k in range(L):
@@ -210,7 +209,7 @@ for k in range(L):
             layout['shapes'].append(make_self_rel(l, 'rgb(175,175,175)', ideo_colors[k], radius=radii_sribb[k]))
             z = 0.9 * np.exp(1j * (l[0] + l[1]) / 2)
             # the text below will be displayed when hovering the mouse over the ribbon
-            text = labels[k] + ' commented on ' + '{:d}'.format(matrix[k][k]) + ' of ' + 'herself Fb posts',
+            text = labels[k] + ' commented on ' + '{:f}'.format(matrix[k][k]) + ' of ' + 'herself Fb posts',
             ribbon_info.append(
                 go.Scatter(x=[z.real], y=[z.imag], mode='markers', marker=dict(size=0.5, color=ideo_colors[k]),
                            text=text, hoverinfo='text'))
@@ -220,10 +219,10 @@ for k in range(L):
             zf = 0.9 * np.exp(1j * (r[0] + r[1]) / 2)
             # texti and textf are the strings that will be displayed when hovering the mouse
             # over the two ribbon ends
-            texti = labels[k] + ' commented on ' + '{:d}'.format(matrix[k][j]) + ' of ' + \
+            texti = labels[k] + ' commented on ' + '{:f}'.format(matrix[k][j]) + ' of ' + \
                     labels[j] + ' Fb posts',
 
-            textf = labels[j] + ' commented on ' + '{:d}'.format(matrix[j][k]) + ' of ' + \
+            textf = labels[j] + ' commented on ' + '{:f}'.format(matrix[j][k]) + ' of ' + \
                     labels[k] + ' Fb posts',
             ribbon_info.append(
                 go.Scatter(x=[zi.real], y=[zi.imag], mode='markers', marker=dict(size=0.5, color=ribbon_color[k][j]),
@@ -244,7 +243,7 @@ for k in range(len(ideo_ends)):
     n = len(zi)
     ideograms.append(
         go.Scatter(x=z.real, y=z.imag, mode='lines', line=dict(color=ideo_colors[k], shape='spline', width=0.25),
-                   text=labels[k] + '<br>' + '{:d}'.format(row_sum[k]), hoverinfo='text'))
+                   text=labels[k] + '<br>' + '{:f}'.format(row_sum[k]), hoverinfo='text'))
     path = 'M '
     for s in range(m):
         path += str(z.real[s]) + ', ' + str(z.imag[s]) + ' L '

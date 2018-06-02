@@ -1,5 +1,10 @@
 # plotly 画图示例
 
+## 参考：<br>
+[Filled Chord Diagram in Python](https://plot.ly/python/filled-chord-diagram/) <br>
+[python应用plotly包实现和弦图chord diagram学习笔记（二)](http://c6h7ko2.blog.163.com/blog/static/2599780122016859504969)
+
+## 步骤
 1 先通过 pip install plotly 安装相关包。<br>
 2 注册账号：https://plot.ly/ 。如果采用离线画图方式，则不用申请账号，下文有离线画图的代码<br>
 3 在 https://plot.ly/settings/api#/ 拿到 API Key <br>
@@ -40,8 +45,3 @@ plotly.offline.plot(table, filename='Data-Table')
   ```
 5 输出：<br>
 
-6 参考：<br>
-https://plot.ly/python/filled-chord-diagram/
-http://c6h7ko2.blog.163.com/blog/static/2599780122016859504969
-
-7.和线图
