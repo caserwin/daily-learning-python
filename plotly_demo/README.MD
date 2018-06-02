@@ -50,4 +50,4 @@ demo1 输出:
 demo2 输出:
 <div align=center><img width="450" height="450" src="https://github.com/caserwin/daily-learning-python/raw/master/pic/plotly_demo/chord_ diagram_2.png"/></div>
 online_demo和offline_demo 输出:
-<div align=center><img width="500" height="250" src="https://github.com/caserwin/daily-learning-python/raw/master/pic/plotly_demo/chord_ diagram_3.png"/></div>
+<div align=center><img width="700" height="250" src="https://github.com/caserwin/daily-learning-python/raw/master/pic/plotly_demo/chord_ diagram_3.png"/></div>
