@@ -17,7 +17,6 @@ radii_sribb = [0.4, 0.30, 0.35, 0.39, 0.12]  # these value are set after a few t
 
 # ============================================================
 
-
 def check_data(data_matrix):
     L, M = data_matrix.shape
     if L != M:

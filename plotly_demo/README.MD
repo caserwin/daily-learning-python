@@ -45,3 +45,9 @@ plotly.offline.plot(table, filename='Data-Table')
   ```
 5 输出：<br>
 
+demo1 输出:
+
+demo2 输出:
+
+online_demo和offline_demo 输出:
+
