@@ -82,6 +82,3 @@ a = LabelEncoder().fit_transform(df['JMT'])
 
 
 # ===============  评估函数 ===================
-
-
-
