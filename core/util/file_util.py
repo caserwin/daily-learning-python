@@ -34,7 +34,6 @@ class FileUtil(object):
         循环遍历,得到一个文件夹第一层下的文件路径
         """
         import os
-        path = path.decode("utf-8").encode('utf-8')
         file_name_list = os.listdir(path)
         return [path + os.sep + file_name for file_name in file_name_list]
 
@@ -73,13 +72,13 @@ class FileUtil(object):
 
 
 if __name__ == '__main__':
-    print(FileUtil.get_dir_size('/Users/cisco/workspace/mygit/daily-learning-python/core/util/test'))
+    print(FileUtil.get_dir_size('/Users/cisco/workspace/mygit/daily-learning-python/core/util/file'))
     print('=' * 40)
-    print('\n'.join(FileUtil.get_all_file_path('/Users/cisco/workspace/mygit/daily-learning-python/core/util/test')))
+    print('\n'.join(FileUtil.get_all_file_path('/Users/cisco/workspace/mygit/daily-learning-python/core/util/file')))
     print('=' * 40)
-    print('\n'.join(FileUtil.get_all_file_name('/Users/cisco/workspace/mygit/daily-learning-python/core/util/test')))
+    print('\n'.join(FileUtil.get_all_file_name('/Users/cisco/workspace/mygit/daily-learning-python/core/util/file')))
     print('=' * 40)
-    line_list = FileUtil.read_file('/Users/cisco/workspace/mygit/daily-learning-python/core/util/test/tmp.txt')
+    line_list = FileUtil.read_file('/Users/cisco/workspace/mygit/daily-learning-python/core/util/file/tmp.txt')
     print('\n'.join(line_list))
     print('=' * 40)
-    FileUtil.write_file('/Users/cisco/workspace/mygit/daily-learning-python/core/util/test/tmp2.txt', "你好!!")
+    FileUtil.write_file('/Users/cisco/workspace/mygit/daily-learning-python/core/util/file/tmp2.txt', "你好!!")

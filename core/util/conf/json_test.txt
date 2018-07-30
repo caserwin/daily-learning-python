@@ -1,0 +1,152 @@
+u'timely_ec_indus': {
+    u'first_cate': [
+      {
+        u'update_time': 1465838499,
+        u'level': 0,
+        u'next_cate': [
+          {
+            u'update_time': 1465838499,
+            u'name': u'\u4e2d\u897f\u836f\u54c1',
+            u'weight': 0.014132114639056207,
+            u'level': 1
+          },
+          {
+            u'update_time': 1465838499,
+            u'name': u'\u6210\u4eba\u7528\u54c1',
+            u'weight': 0.013374070175658555,
+            u'level': 1
+          }
+        ],
+        u'weight': 0.3013830986612115,
+        u'name': u'\u533b\u7597\u4fdd\u5065'
+      },
+      {
+        u'update_time': 1465838499,
+        u'level': 0,
+        u'next_cate': [
+          {
+            u'update_time': 1465838499,
+            u'name': u'\u5927\u5bb6\u7535',
+            u'weight': 0.012670171745360738,
+            u'level': 1
+          }
+        ],
+        u'weight': 0.012670171745360738,
+        u'name': u'\u5bb6\u7528\u7535\u5668'
+      },
+      {
+        u'update_time': 1465838499,
+        u'level': 0,
+        u'next_cate': [
+          {
+            u'update_time': 1465838499,
+            u'name': u'\u56fe\u4e66',
+            u'weight': 0.01321163207635906,
+            u'level': 1
+          }
+        ],
+        u'weight': 0.01321163207635906,
+        u'name': u'\u6587\u5316\u5a31\u4e50'
+      },
+      {
+        u'update_time': 1465838499,
+        u'level': 0,
+        u'next_cate': [
+          {
+            u'update_time': 1465838499,
+            u'level': 1,
+            u'next_cate': [
+              {
+                u'update_time': 1465838499,
+                u'name': u'\u5bb6\u52a1\u624b\u5957',
+                u'weight': 0.014240406705255872,
+                u'level': 2
+              }
+            ],
+            u'weight': 0.014240406705255872,
+            u'name': u'\u6e05\u6d01\u7528\u5177'
+          }
+        ],
+        u'weight': 0.014240406705255872,
+        u'name': u'\u65e5\u7528\u767e\u8d27'
+      },
+      {
+        u'update_time': 1465838499,
+        u'level': 0,
+        u'next_cate': [
+          {
+            u'update_time': 1465838499,
+            u'name': u'\u6e38\u620f\u4ea4\u6613',
+            u'weight': 0.013807238440457214,
+            u'level': 1
+          },
+          {
+            u'update_time': 1465838499,
+            u'level': 1,
+            u'next_cate': [
+              {
+                u'update_time': 1465838499,
+                u'name': u'\u6e38\u620f\u8d26\u53f7',
+                u'weight': 0.014781867036254195,
+                u'level': 2
+              }
+            ],
+            u'weight': 0.3087289385969787,
+            u'name': u'\u6e38\u620f\u670d\u52a1'
+          }
+        ],
+        u'weight': 0.44506482018218696,
+        u'name': u'\u6e38\u620f'
+      },
+      {
+        u'update_time': 1465838499,
+        u'level': 0,
+        u'next_cate': [
+          {
+            u'update_time': 1465838499,
+            u'level': 1,
+            u'next_cate': [
+              {
+                u'update_time': 1465838499,
+                u'name': u'\u7eb8\u7c7b',
+                u'weight': 0.013644800341157717,
+                u'level': 2
+              }
+            ],
+            u'weight': 0.013644800341157717,
+            u'name': u'\u529e\u516c\u6587\u4eea'
+          }
+        ],
+        u'weight': 0.013644800341157717,
+        u'name': u'\u7535\u8111/\u529e\u516c'
+      },
+      {
+        u'update_time': 1465838499,
+        u'level': 0,
+        u'next_cate': [
+          {
+            u'update_time': 1465838499,
+            u'name': u'\u9152\u7c7b',
+            u'weight': 0.014132114639056207,
+            u'level': 1
+          }
+        ],
+        u'weight': 0.014132114639056207,
+        u'name': u'\u7f8e\u98df\u7279\u4ea7'
+      },
+      {
+        u'update_time': 1465838499,
+        u'level': 0,
+        u'next_cate': [
+          {
+            u'update_time': 1465838499,
+            u'name': u'\u8fd0\u52a8\u7537\u978b',
+            u'weight': 0.012561879679161071,
+            u'level': 1
+          }
+        ],
+        u'weight': 0.012561879679161071,
+        u'name': u'\u8fd0\u52a8\u6237\u5916'
+      }
+    ]
+  }
