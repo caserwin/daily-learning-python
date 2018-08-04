@@ -8,7 +8,6 @@ class TimeParser(object):
 
     def parse_time(self, time_str):
         """解析时间字符串, 返回绝对时间戳
-
         :param time_str: 支持 Unix 时间戳, '%Y-%m-%d %H:%M:%S', '1m', '2h', '-3d', 'now' 几种格式
         """
 

@@ -43,26 +43,26 @@ print("=" * 40)
 print(dic.has_key('a'))
 print('a' in dic.keys())
 
-# # python 字符串和字典进行转化，方式1：
-# a = '{"name":"yct","age":10}'
-# dic_a = eval(a)
-# print(dic_a)
-#
-# # python 字符串和字典进行转化，方式2：
-# person = {"name": "yidxue", "age": 27}
-# person_str = json.dumps(person)
-# person_dic = json.loads(person_str)
-# print(person_dic)
-#
-# # 判断字段是否为空
-# dict1 = {}
-# print(dict1 == {})
-#
-# # 有序字典
-# import collections
-#
-# dic = collections.OrderedDict()
-# dic['k1'] = 'v1'
-# dic['k2'] = 'v2'
-# dic['k3'] = 'v3'
-# print(dic)
+# python 字符串和字典进行转化，方式1：
+a = '{"name":"yct","age":10}'
+dic_a = eval(a)
+print(dic_a)
+
+# python 字符串和字典进行转化，方式2：
+person = {"name": "yidxue", "age": 27}
+person_str = json.dumps(person)
+person_dic = json.loads(person_str)
+print(person_dic)
+
+# 判断字段是否为空
+dict1 = {}
+print(dict1 == {})
+
+# 有序字典
+import collections
+
+dic = collections.OrderedDict()
+dic['k1'] = 'v1'
+dic['k2'] = 'v2'
+dic['k3'] = 'v3'
+print(dic)
