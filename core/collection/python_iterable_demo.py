@@ -12,3 +12,8 @@ for (x, y) in zip(ls1, ls2):
 ls = [1, 5, 5, 3, 3, 4, 6]
 s1 = ','.join(str(n) for n in ls)
 print(s1)
+
+#  enumerate 用法
+list = ['a1', 'b2', 'c3', 'd4', 'e5']
+for i, s in enumerate(list):
+    print(str(i) + "==" + s + "==" + list[i])

@@ -63,9 +63,11 @@ class IpWrapper(object):
 
 
 if __name__ == "__main__":
-    log_text = LogText('fff@163.comdssd得到http://www.baiddu.com方法2016-07-09 09:21:23擦撒fff@163.comhttp://www.baidu.com')
-    log_text_wrap = DataStandardWrapper(EmailWrapper(UrlWrapper(log_text)))
-    print(log_text_wrap.get_log())
+    log_text = LogText('我的163邮箱是erwin@163.com，经常在http://www.google.com上搜索问题。2016-07-14 '
+                       '09:21:23是我的生日。http://www.baidu.com')
 
     log_text_wrap = UrlWrapper(EmailWrapper(log_text))
+    print(log_text_wrap.get_log())
+
+    log_text_wrap = DataStandardWrapper(EmailWrapper(UrlWrapper(log_text)))
     print(log_text_wrap.get_log())
