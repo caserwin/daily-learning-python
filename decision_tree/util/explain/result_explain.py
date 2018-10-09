@@ -1,3 +1,5 @@
+# encoding:utf-8
+
 from decision_tree.util.explain.dic import test_dic
 import collections
 

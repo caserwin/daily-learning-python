@@ -1,8 +1,9 @@
+# encoding:utf-8
+
 from numpy import *
 import math
 import copy
 import pickle
-
 
 class ID3DTree(object):
     def __init__(self):  # 构造方法
