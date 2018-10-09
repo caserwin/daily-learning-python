@@ -14,13 +14,13 @@ if __name__ == '__main__':
     dtree.train()
 
     # 保存模型
-    dtree.storeTree(dtree.tree, "C45_2018-04-18.model")
+    dtree.storeTree(dtree.tree, "test.model")
 
     # 画图
     tp.createPlot(dtree.tree)
 
     # 读取模型
-    model = dtree.grabTree("C45_2018-04-18.model")
+    model = dtree.grabTree("test.model")
     print(json.dumps(model, ensure_ascii=False))
 
     # 解释
@@ -30,5 +30,5 @@ if __name__ == '__main__':
         print(info)
 
     # 预测
-    vector = ['WINDOWS', 'RETURN', 'IE', 'TRUE']
-    print("真实输出", "no", "  ->  ", "决策树输出", dtree.predict(dtree.tree, labels, vector))
+    vector = ['FALSE', 'UPDATE', 'IE', 'ActiveX', 'Webex']
+    print("真实输出  ->  " + "决策树输出" + dtree.predict(dtree.tree, labels, vector))
