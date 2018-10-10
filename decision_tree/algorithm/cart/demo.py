@@ -2,7 +2,7 @@ import pandas as pd
 
 if __name__ == '__main__':
     column_names = ['ISREGISTER', 'USERTYPE', 'USERBROWSER', 'JOINMETHOD', 'SYSTEM', 'LABEL']
-    df = pd.read_csv("/Users/cisco/workspace/mygit/daily-learning-python/decision_tree/data/test.csv", sep=",",
+    df = pd.read_csv("/Users/yidxue/workspace/mygit/daily-learning-python/decision_tree/data/test.csv", sep=",",
                      names=column_names)
 
     dummies_ISREGISTER = pd.get_dummies(df['ISREGISTER'], prefix='ISREGISTER')

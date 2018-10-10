@@ -8,7 +8,7 @@ if __name__ == '__main__':
     dtree = C4_5DTree()
 
     labels = ["RETURN", "USERTYPE", "USERBROWSER", "JOINMETHOD", "SYSTEM"]
-    dtree.loadDataSet("/Users/cisco/workspace/mygit/daily-learning-python/decision_tree/data/test.csv", labels, ",")
+    dtree.loadDataSet("/Users/yidxue/workspace/mygit/daily-learning-python/decision_tree/data/test.csv", labels, ",")
 
     # 训练
     dtree.train()
