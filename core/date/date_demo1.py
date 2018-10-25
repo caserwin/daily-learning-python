@@ -176,3 +176,6 @@ if __name__ == "__main__":
 
     # 判断字符串是否为指定格式的日期格式
     print(DateParser().is_valid_date('2010-04-01', DateType.YMD))
+
+    # 日期加减
+    print(datetime.datetime.strptime("2018-10-02", "%Y-%m-%d") + datetime.timedelta(days=3))

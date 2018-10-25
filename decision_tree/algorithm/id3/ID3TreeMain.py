@@ -7,7 +7,7 @@ import json
 if __name__ == '__main__':
     dtree = ID3DTree()
 
-    labels = ["RETURN", "USERTYPE", "USERBROWSER", "JOINMETHOD", "SYSTEM"]
+    labels = ["ISREGISTER", "USERTYPE", "USERBROWSER", "JOINMETHOD", "SYSTEM"]
     dtree.loadDataSet("/Users/yidxue/workspace/mygit/daily-learning-python/decision_tree/data/test.csv", labels, ",")
 
     # 训练

@@ -7,7 +7,7 @@ import json
 if __name__ == '__main__':
     dtree = C4_5DTree()
 
-    labels = ["RETURN", "USERTYPE", "USERBROWSER", "JOINMETHOD", "SYSTEM"]
+    labels = ["ISREGISTER", "USERTYPE", "USERBROWSER", "JOINMETHOD", "SYSTEM"]
     dtree.loadDataSet("/Users/yidxue/workspace/mygit/daily-learning-python/decision_tree/data/test.csv", labels, ",")
 
     # 训练
@@ -30,5 +30,5 @@ if __name__ == '__main__':
         print(info)
 
     # 预测
-    vector = ['FALSE', 'UPDATE', 'IE', 'ActiveX', 'Webex']
-    print("真实输出  ->  " + "决策树输出" + dtree.predict(dtree.tree, labels, vector))
+    vector = ['FALSE', 'UPDATE', 'IE', 'ActiveX', 'Spark']
+    print("决策树输出" + dtree.predict(dtree.tree, labels, vector))
