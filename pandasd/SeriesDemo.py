@@ -39,3 +39,6 @@ print(df)
 # 两个序列基于列拼接
 df = pd.concat([ser1, ser2], axis=1)
 print(df)
+
+tmp = pd.Series({item[0]: item[1] for item in [('2018-12-28 00:00:00', 159.80092592592592), ('2018-12-28 00:01:00', 85.24064171122994)]})
+print(tmp)

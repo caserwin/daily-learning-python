@@ -73,3 +73,6 @@ print(df)
 
 print(df.columns1.isin(['a', 'b']))
 print(df.columns1[df.columns1.isin(['a', 'b'])] == 'c')
+
+
+pd.read_json('/Users/steviechen1982/Documents/GitHub/mng20days_B.json')

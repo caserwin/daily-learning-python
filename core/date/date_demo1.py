@@ -91,7 +91,7 @@ class DateParser(object):
         2. 输入是字典类型。
         3. 默认降序方式
         """
-        res_dic = sorted(date_dict.iteritems(),
+        res_dic = sorted(date_dict.items(),
                          key=lambda d: datetime.datetime.strptime(d[0], date_format), reverse=DESC)
         dic = OrderedDict()
         for res in res_dic:
