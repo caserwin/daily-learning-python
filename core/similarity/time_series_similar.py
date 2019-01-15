@@ -7,7 +7,7 @@ float_formatter = lambda x: "%.2f" % x
 np.set_printoptions(formatter={'float_kind': float_formatter})
 
 
-def warping_paths(s1, s2, **_kwargs):
+def TimeSeriesSimilarity(s1, s2, **_kwargs):
     l1 = len(s1)
     l2 = len(s2)
     window = max(l1, l2)
@@ -26,10 +26,11 @@ def warping_paths(s1, s2, **_kwargs):
     return s, paths.T
 
 
-s1 = [1, 2, 0, 1, 1, 2]
-s2 = [1, 0, 1]
+if __name__ == '__main__':
+    s1 = [1, 2, 0, 1, 1, 2]
+    s2 = [1, 0, 1]
 
-distance, paths = warping_paths(s1, s2)
+    distance, paths = TimeSeriesSimilarity(s1, s2)
 
-print(distance)
-print(paths)
+    print(distance)
+    # print(paths)
