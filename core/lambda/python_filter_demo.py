@@ -9,6 +9,6 @@ def my_function(num):
 
 ls = [12, 50, 8, 17, 65, 14, 9, 6, 14, 5]
 # demo 1
-print(filter(my_function, ls))
+print(list(filter(my_function, ls)))
 # demo 2
-print(filter(lambda num: True if 5 < num < 10 else False, ls))
+print(list(filter(lambda num: True if 5 < num < 10 else False, ls)))

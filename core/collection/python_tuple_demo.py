@@ -5,3 +5,5 @@
 ls = [1, 2, 3, 4]
 id_tuple = tuple(ls)
 print(id_tuple)
+
+print(id_tuple[0])

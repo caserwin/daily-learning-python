@@ -30,10 +30,13 @@ from core.similarity.cos_similar import CosSimilarity
 from core.similarity.pearson_similar import PearsonSimilarity
 from core.similarity.time_series_similar import TimeSeriesSimilarity
 
-x = np.arange(0, 20, .5)
+x = np.arange(0, 15, .5)
 s1 = np.sin(x)
-s2 = np.sin(x - 2)
+s2 = np.sin(x - 1)
 d, paths = dtw.warping_paths(s1, s2)
+
+print(s1)
+print(s2)
 
 plt.figure()
 plt.plot(x, s1)
