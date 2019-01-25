@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2019/1/14 上午10:39
 # @Author  : yidxue
-import numpy as np
-from dtaidistance import dtw
+import matplotlib.pyplot as plt
 from dtaidistance import dtw_visualisation as dtwvis
+import core.similarity.time_series_util.attenuate_weight1 as cl1
+import core.similarity.time_series_util.attenuate_weight2 as cl2
 from core.similarity.time_series_util.attenuate_weight1 import *
 
 float_formatter = lambda x: "%.2f" % x
@@ -50,8 +51,21 @@ def best_path(paths):
 if __name__ == '__main__':
     # ====================== 问题描述 ===========================
     s1 = np.array([1, 2, 0, 1, 1, 2, 0, 1, 1, 2, 0, 1, 1, 2, 0, 1])
-    s2 = np.array([0, 1, 1, 2, 0, 1, 1.7, 2, 0, 1, 1, 2, 0, 1, 1, 2])
+    s2 = np.array([0, 1, 1, 2, 0, 1, 1, 2, 0, 1, 1, 2, 0, 1, 1, 2])
     s3 = np.array([0.8, 1.5, 0, 1.2, 0, 0, 0.6, 1, 1.2, 0, 0, 1, 0.2, 2.4, 0.5, 0.4])
+
+    plt.figure()
+    plt.subplot(311)
+    plt.ylabel("s1")
+    plt.plot(s1)
+    plt.subplot(312)
+    plt.ylabel("s2")
+    plt.plot(s2)
+    plt.subplot(313)
+    plt.ylabel("s3")
+    plt.plot(s3)
+
+    plt.show()
 
     distance12, paths12 = TimeSeriesSimilarity(s1, s2)
     distance13, paths13 = TimeSeriesSimilarity(s1, s3)
@@ -64,26 +78,28 @@ if __name__ == '__main__':
 
     # ====================== 画图展示 ===========================
     dtwvis.plot_warpingpaths(s1, s2, paths12, best_path12)
-    print(best_path12)
+    # print(best_path12)
 
     dtwvis.plot_warpingpaths(s1, s3, paths13, best_path13)
-    print(best_path13)
+    # print(best_path13)
     # ====================== 改进策略 1 ===========================
+    com_ls12 = cl1.get_common_seq(best_path12)
+    com_ls13 = cl1.get_common_seq(best_path13)
 
-    com_ls12 = get_common_seq(best_path12)
-    com_ls13 = get_common_seq(best_path13)
+    weight12 = cl1.calculate_attenuate_weight(len(best_path12), com_ls12)
+    weight13 = cl1.calculate_attenuate_weight(len(best_path13), com_ls13)
 
-    print(com_ls12)
-    print(com_ls13)
-    attenuate_weight12 = calculate_attenuate_weight(best_path12[len(best_path12) - 1][0],
-                                                    best_path12[len(best_path12) - 1][1],
-                                                    com_ls12)
-    attenuate_weight13 = calculate_attenuate_weight(best_path13[len(best_path13) - 1][0],
-                                                    best_path13[len(best_path13) - 1][1],
-                                                    com_ls13)
-    print("改进后:" + str(distance12 * attenuate_weight12))
-    print("改进后:" + str(distance13 * attenuate_weight13))
+    print("策略1，更新后s1和s2距离：" + str(distance12 * weight12))
+    print("策略1，更新后s1和s3距离：" + str(distance13 * weight13))
 
     # ====================== 改进策略 2 ===========================
+    s2 = np.array([0, 1, 1, 2, 0, 1, 1.5, 2, 0, 1, 1, 2, 0, 1, 1, 2])
 
+    distance12, paths12, max_sub12 = cl2.TimeSeriesSimilarityImprove(s1, s2)
+    distance13, paths13, max_sub13 = cl2.TimeSeriesSimilarityImprove(s1, s3)
 
+    weight12 = cl2.calculate_attenuate_weight(len(s1), len(s2), max_sub12)
+    weight13 = cl2.calculate_attenuate_weight(len(s1), len(s3), max_sub13)
+
+    print("策略2，更新后s1和s2距离：" + str(distance12 * weight12))
+    print("策略2，更新后s1和s3距离：" + str(distance13 * weight13))

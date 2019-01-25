@@ -8,9 +8,9 @@ np.set_printoptions(formatter={'float_kind': float_formatter})
 
 
 def TimeSeriesSimilarityImprove(s1, s2):
-    # 取较大的标准差
+    # 取较小的标准差
     sdt = np.std(s1, ddof=1) if np.std(s1, ddof=1) < np.std(s2, ddof=1) else np.std(s2, ddof=1)
-    print("两个序列最小标准差:" + str(sdt))
+    # print("两个序列最小标准差:" + str(sdt))
     l1 = len(s1)
     l2 = len(s2)
     paths = np.full((l1 + 1, l2 + 1), np.inf)  # 全部赋予无穷大

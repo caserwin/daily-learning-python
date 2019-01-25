@@ -2,6 +2,7 @@
 # @Time    : 2019/1/24 上午11:37
 # @Author  : yidxue
 import numpy as np
+import math
 
 
 def get_common_seq(best_path, threshold=1):
@@ -22,11 +23,11 @@ def get_common_seq(best_path, threshold=1):
     return list(filter(lambda num: True if threshold < num else False, com_ls))
 
 
-def calculate_attenuate_weight(seqLen1, seqLen2, com_ls):
+def calculate_attenuate_weight(seqLen, com_ls):
     weight = 0
     for comlen in com_ls:
-        weight = weight + comlen / seqLen1 * comlen / seqLen2
-    return 1 - weight
+        weight = weight + (comlen * comlen) / (seqLen * seqLen)
+    return 1 - math.sqrt(weight)
 
 
 def best_path(paths):
@@ -86,10 +87,10 @@ if __name__ == '__main__':
     com_ls1 = get_common_seq(best_path12)
     com_ls2 = get_common_seq(best_path13)
 
-    weight12 = calculate_attenuate_weight(best_path12[len(best_path12) - 1][0], best_path12[len(best_path12) - 1][1],
-                                          com_ls1)
-    weight13 = calculate_attenuate_weight(best_path13[len(best_path13) - 1][0], best_path13[len(best_path13) - 1][1],
-                                          com_ls2)
+    print(len(best_path12), com_ls1)
+    print(len(best_path13), com_ls2)
+    weight12 = calculate_attenuate_weight(len(best_path12), com_ls1)
+    weight13 = calculate_attenuate_weight(len(best_path13), com_ls2)
 
     # 更新距离
     print("更新后s1和s2距离：" + str(distance12 * weight12))

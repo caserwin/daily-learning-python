@@ -1,28 +1,6 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2019/1/14 上午11:37
 # @Author  : yidxue
-# from dtaidistance import dtw
-# import array
-#
-# s1 = [1, 2, 0, 1, 1, 2]
-# s2 = [1, 0, 1]
-# path = dtw.warping_path(s1, s2)
-# print(path)
-#
-# s1 = [1, 2, 0, 1, 1, 2]
-# s2 = [1, 0]
-# distance, paths = dtw.warping_paths(s1, s2)
-# print(distance)
-#
-# s1 = array.array('d', [1, 2, 0, 1, 1, 2])
-# s2 = array.array('d', [1, 0])
-# d = dtw.distance_fast(s1, s2)
-# print(d)
-# # print(paths)
-#
-# # dtwvis.plot_warping(s1, s2, path, filename="warp.png")
-# # print(dtw.distance.__doc__)
-
 import numpy as np
 import matplotlib.pyplot as plt
 from dtaidistance import dtw
