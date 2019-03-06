@@ -22,3 +22,16 @@ line = 'aa bb ccc  dddd'
 print(line.split())  # 按一个空格或者多个空格分
 print(line.split(' '))  # 按一个空格分
 print(line.split(' ', 2))  # 按一个空格分，分两次
+
+cols = "erwin"
+tablename = "tableA"
+sql = "SELECT {cols} FROM `{tablename}`".format(cols=cols, tablename=tablename)
+print(sql)
+
+print("=" * 40)
+# 不设置指定位置，按默认顺序
+print("{} {}".format("hello", "world"))
+# 设置指定位置
+print("{1} {0} {1}".format("hello", "world"))
+# 设置关键字
+print('{name},{age}'.format(age=18, name='kzc'))
