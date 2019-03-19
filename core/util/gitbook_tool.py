@@ -16,3 +16,9 @@ if __name__ == '__main__':
     res.sort()
     for i, s in enumerate(res):
         print(str(i + 1) + "==>" + str(s))
+
+    max_num = res[len(res) - 1]
+    print("=" * 40)
+    for i in range(1, max_num + 1):
+        if i not in res:
+            print("[" + str(i) + "](" + str(i) + ".md)")
