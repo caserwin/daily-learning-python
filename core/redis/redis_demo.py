@@ -15,7 +15,7 @@ class RedisClient(object):
         self.db = "0"
         self.redis_client = redis.StrictRedis(host=self.host, port=self.port, db=self.db)
 
-    def clearAll(self):
+    def clear_all(self):
         """
         :return: 清空所有数据
         """
@@ -88,5 +88,8 @@ if __name__ == '__main__':
     ))
 
     print(RedisClient().get_cache_data("error500_component1_stype1_c1_etype1_2019-03-19_100_2019-01-19 07:1"))
+
+    print(RedisClient().get_cache_data("aa"))
+    print(RedisClient().get_cache_bluk_data("aa"))
 
     RedisClient().set_single_data("aa", 1)
