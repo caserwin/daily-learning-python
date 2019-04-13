@@ -60,6 +60,21 @@ class FileUtil(object):
         fo.close()
 
     @staticmethod
+    def write_ls_file(file_path, contexts, method='w'):
+        """
+        写数据到一个文件
+        :param file_path:
+        :param method: 'a'表示默认为追加方式, 'wb'表示覆盖或者创建文件写入
+        :param context:
+        """
+        with open(file_path, method) as fo:
+            for context in contexts:
+                fo.write(str(context))
+                fo.write("\n")
+        # 关闭打开的文件
+        fo.close()
+
+    @staticmethod
     def read_file(file_path):
         """
         读数据

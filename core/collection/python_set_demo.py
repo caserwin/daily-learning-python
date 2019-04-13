@@ -4,6 +4,12 @@
 
 st = {'a', 'b', 'c'}
 print(st)
+
+st1 = {'b', 'c', 'd', 'e'}
+st.update(st1)
+print(st1)
+print(st)
+
 print({x * 2 for x in st})
 print({w for w in ['xyd', 'hyz', 'ssss'] if len(w) < 4})
 st.add('d')

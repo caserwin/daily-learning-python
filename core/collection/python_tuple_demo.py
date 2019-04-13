@@ -7,3 +7,6 @@ id_tuple = tuple(ls)
 print(id_tuple)
 
 print(id_tuple[0])
+
+t = (1, 2, 4)
+print(t[1])
