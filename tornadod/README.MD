@@ -1,4 +1,10 @@
+一. 线程池提高并发处理量
+1. 使用Tornado自带的concurrent的语法糖run_on_executor。
+2. 使用Python自带的concurrent的ThreadPoolExecutor线程池库。
+
+
 ## demo1
+[Tornado高并发处理方法](https://blog.csdn.net/qq_28893679/article/details/69437496)
 
 ## demo2 
 功能：单进程+多线程方式，实现非阻塞
