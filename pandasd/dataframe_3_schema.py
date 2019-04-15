@@ -23,6 +23,7 @@ print_line("输出字段名")
 print_br(df.columns.values)
 
 print_line("类型转换")
-df[['C', 'D']] = df[['C', 'D']].astype(float)
+df['C'] = df['C'].astype(float)
+pd.to_numeric(df["D"], errors='coerce')
 df.E = df.E.astype(str)
 print_br(df.dtypes)

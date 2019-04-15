@@ -11,6 +11,9 @@ raw_data = {'name': ['Jason', 'Molly', np.nan, np.nan, np.nan],
             'age': [42, 52, 36, 24, 70]}
 df = pd.DataFrame(raw_data, columns=['name', 'nationality', 'age'])
 
+print_line("select unique")
+print_br(df["nationality"].unique())
+
 print_line("查询 nationality = 'USA'，年龄大于50")
 american = df['nationality'] == "USA"
 elderly = df['age'] > 50
