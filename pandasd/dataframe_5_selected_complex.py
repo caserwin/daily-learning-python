@@ -5,18 +5,19 @@
 import numpy as np
 import pandas as pd
 
-raw_data = {'first_name': ['Jason', 'Molly', np.nan, np.nan, np.nan],
+raw_data = {'name': ['Jason', 'Molly', np.nan, np.nan, np.nan],
             'nationality': ['USA', 'USA', 'France', 'UK', 'UK'],
             'age': [42, 52, 36, 24, 70]}
-df = pd.DataFrame(raw_data, columns=['first_name', 'nationality', 'age'])
+df = pd.DataFrame(raw_data, columns=['name', 'nationality', 'age'])
 
 # 查询 nationality = 'USA'，年龄大于50
 american = df['nationality'] == "USA"
 elderly = df['age'] > 50
 print(df[american & elderly])
 print("=" * 20)
+
 # 查询first_name非空，国家是USA
-print(df[df['first_name'].notnull() & (df['nationality'] == "USA")])
+print(df[df['name'].notnull() & (df['nationality'] == "USA")])
 print("=" * 20)
 
 # select in 语法

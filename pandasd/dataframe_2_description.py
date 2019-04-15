@@ -4,8 +4,10 @@
 import pandas as pd
 import numpy as np
 
-date_index = pd.date_range('20140729', periods=10)
-df = pd.DataFrame(np.random.randn(10, 5), columns=['A', 'B', 'C', 'D', 'E'], index=date_index)
+raw_data = {'name': ['Jason', 'Molly', np.nan, np.nan, np.nan],
+            'nationality': ['USA', 'USA', 'France', 'UK', 'UK'],
+            'age': [42, 52, 36, 24, 70]}
+df = pd.DataFrame(raw_data, columns=['name', 'nationality', 'age'])
 
 print(df.describe(include='all'))
 print("=" * 20)
@@ -32,8 +34,13 @@ print(df.tail(5))
 print("=" * 20)
 
 # 查看指定字段的每个值个数分布情况
-print(df.A.value_counts())
+print(df.name.value_counts())
 print("=" * 20)
 
 # 输出字段名
 print(df.columns.values)
+print("=" * 20)
+
+# 检查空值 NaN
+print(pd.isnull(df))
+print(pd.isnull(df.name))

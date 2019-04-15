@@ -8,7 +8,7 @@ print(df)
 print(df.dtypes)
 print("=" * 20)
 
-# 字段重命名
+# 字段重命名：dataframe.rename()
 print(df.rename(index=str, columns={"A": "a", "B": "b"}))
 print("=" * 20)
 
@@ -16,9 +16,6 @@ print("=" * 20)
 df.columns = ['C', 'D', 'E']
 print(df)
 print("=" * 20)
-
-# index 重命名：dataframe.rename()
-
 
 # index
 print(df.reset_index())

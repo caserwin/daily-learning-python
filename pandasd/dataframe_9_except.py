@@ -12,5 +12,3 @@ ds1 = set([tuple(line) for line in df1[['name']].values.tolist()])
 ds2 = set([tuple(line) for line in df2[['name']].values.tolist()])
 for d in ds1.difference(ds2):
     print(d)
-
-#

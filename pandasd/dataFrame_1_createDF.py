@@ -24,7 +24,8 @@ print(pd.DataFrame(data=dic_ls))
 print("=" * 20)
 
 # 基于字典-列表类型
-df = pd.DataFrame(data={'columns1': ['a', 'b', 'c'], 'columns2': ['c', 'd', 'e']})
+df = pd.DataFrame(data={'columns1': ['a', 'b', 'c'],
+                        'columns2': ['c', 'd', 'e']})
 print(df)
 print("=" * 20)
 
