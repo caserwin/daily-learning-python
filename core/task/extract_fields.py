@@ -19,7 +19,7 @@ def iter_extract_field(item, fields_ls=None, prefix=''):
 
 if __name__ == '__main__':
     # 读文件，并转成json list
-    text_ls = FileUtil.read_file('./task/out1.json')
+    text_ls = FileUtil.read_file('./task/details.json')
     json_ls = [json.loads(item) for item in text_ls]
 
     # 加到set中
