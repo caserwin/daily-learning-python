@@ -2,7 +2,7 @@
 # @Time    : 2018/10/3 下午2:36
 # @Author  : yidxue
 import pandas as pd
-from pandasd.function.util_function import *
+from demo_pandas.function.util_function import *
 
 """
 http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html

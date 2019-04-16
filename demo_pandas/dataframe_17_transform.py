@@ -3,7 +3,7 @@
 # @Author  : yidxue
 import numpy as np
 import pandas as pd
-from pandasd.function.util_function import *
+from demo_pandas.function.util_function import *
 
 data = np.array([[1, 2, 3, 4],
                  [4, 5, 6, 8],

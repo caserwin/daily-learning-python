@@ -4,20 +4,18 @@
 # @Author  : erwin
 import pandas as pd
 import numpy as np
-from pandasd.function.util_function import *
-
+from demo_pandas.function.util_function import *
 
 raw_data = {'name': ['Jason', 'Molly', np.nan, np.nan, np.nan],
             'nationality': ['USA', 'USA', 'France', 'UK', 'UK'],
             'age': [42, 52, 36, 24, 70]}
 df = pd.DataFrame(raw_data, columns=['name', 'nationality', 'age'])
 
-print_line("update 示例")
-# 把 name 不等于 null的 user 的age设置为 10
+print_line("update 示例：把 name 不等于 null的 user 的age设置为 10")
 df.loc[(df.name.notnull()), 'age'] = 10
 print_br(df)
 
-# 把 nationality = USA 的 user 的age设置为 10
+print_line("update 示例：把 nationality = USA 的 user 的age设置为 10")
 df.loc[(df.nationality == 'UK'), 'age'] = 10
 print_br(df)
 
@@ -25,3 +23,6 @@ print_line("replace 示例")
 print_br(df.replace('USA', 'USA1'))
 print_br(df.nationality.replace('USA', 'USA1'))
 
+print_line("增加一行")
+print_line("增加一列")
+print_line("append")

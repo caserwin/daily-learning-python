@@ -4,12 +4,18 @@
 # @Author  : erwin
 import numpy as np
 import pandas as pd
-from pandasd.function.util_function import *
+from demo_pandas.function.util_function import *
 
-data = np.array([[1, 2, 3, 4],
-                 [4, 5, 6, 8],
+data = np.array([[3, 2, 3, 4],
+                 [2, 5, 6, 8],
                  [2, 3, 5, 9]])
 df = pd.DataFrame(data=data, index=['a', 'b', 'c'], columns=['A', 'B', 'C', 'D'])
+
+print_line("select unique")
+print_br(df["D"].unique())
+
+print_line("查看指定字段的每个值个数分布情况")
+print_br(df.A.value_counts())
 
 print_line("Sum of values in a data frame")
 print_br(df.sum())

@@ -3,7 +3,7 @@
 # @Author  : yidxue
 import pandas as pd
 import numpy as np
-from pandasd.function.util_function import *
+from demo_pandas.function.util_function import *
 
 
 raw_data = {'name': ['Jason', 'Molly', np.nan, np.nan, np.nan],
@@ -31,9 +31,6 @@ print_br('每列值类型' + str(df.dtypes))
 print_line("查看前10列，后5行")
 print_br(df.head(10))
 print_br(df.tail(5))
-
-print_line("查看指定字段的每个值个数分布情况")
-print_br(df.name.value_counts())
 
 print_line("输出字段名")
 print_br(df.columns.values)

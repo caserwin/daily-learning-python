@@ -1,0 +1,15 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Time    : 2019-04-15 10:57
+# @Author  : erwin
+import pandas as pd
+import numpy as np
+from demo_pandas.function.util_function import *
+
+print_line("将 DataFrame 直接写入 CSV 文件")
+data = np.array([[1, 2, 3, 4],
+                 [4, 5, 6, 8],
+                 [2, 3, 5, 9]])
+
+df = pd.DataFrame(data=data, index=['a', 'b', 'c'], columns=['A', 'B', 'C', 'D'])
+df.to_csv("./data/dataframe_16_datasink.csv", sep=",", index=False, header=False)

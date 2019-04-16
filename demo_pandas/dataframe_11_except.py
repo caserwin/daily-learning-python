@@ -3,7 +3,7 @@
 # @Time    : 2019-03-19 15:18
 # @Author  : erwin
 import pandas as pd
-from pandasd.function.util_function import *
+from demo_pandas.function.util_function import *
 
 df1 = pd.DataFrame(data={'name': ['a', 'b', 'c', 'd'], 'gender': ['male', 'male', 'female', 'female']})
 df2 = pd.DataFrame(data={'name': ['a', 'b', 'c', 'e'], 'age': [21, 22, 23, 20]})
