@@ -1,3 +1,8 @@
+### pandas 介绍
+1. pandas 是基于 Numpy 构建的含有更高级数据结构和工具的数据分析包。
+2. pandas 是围绕着 Series 和 DataFrame 两个核心数据结构展开的 。
+3. Series 和 DataFrame 分别对应于一维的序列和二维的表结构。
+
 ### 元素查找
 Pandas 的 DataFrame 不像Spark中的DataFrame或者是Flink中的DataSet/DataStream，没有SQL/Table API，即不能通过where(),filter() 或者是SQL的方式查询。
 查找一共有三种方式，[]、loc[]、iloc[]。
@@ -17,5 +22,6 @@ Pandas 的 DataFrame 不像Spark中的DataFrame或者是Flink中的DataSet/DataS
 
 ### 参考
 1. [pandas dataframe](http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html)
-2. [23种Pandas核心操作，你需要过一遍吗？](https://zhuanlan.zhihu.com/p/43018099)
-3. [十分钟搞定pandas](http://www.shizhuolin.com/2015/04/19/978.html?from=timeline&isappinstalled=0)
+2. [pandas series](http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html)
+3. [23种Pandas核心操作，你需要过一遍吗？](https://zhuanlan.zhihu.com/p/43018099)
+4. [十分钟搞定pandas](http://www.shizhuolin.com/2015/04/19/978.html?from=timeline&isappinstalled=0)
