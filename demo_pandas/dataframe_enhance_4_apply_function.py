@@ -18,3 +18,5 @@ df = pd.DataFrame(raw_data, columns=['name', 'nationality', 'age'])
 
 print_br(df["age"].apply(lambda age: 2 * age))
 print_br(df["age"].apply(multiply))
+
+

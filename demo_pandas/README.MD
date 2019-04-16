@@ -1,6 +1,5 @@
 ### 元素查找
-Pandas 的 DataFrame 不像Spark中的DataFrame或者是Flink中的DataSet/DataStream，没有SQL/Table API，即不能通过where(),filter() 或者是SQL的方式查询，所以查找挺不方便的。
-
+Pandas 的 DataFrame 不像Spark中的DataFrame或者是Flink中的DataSet/DataStream，没有SQL/Table API，即不能通过where(),filter() 或者是SQL的方式查询。
 查找一共有三种方式，[]、loc[]、iloc[]。
 
 1. []，根据列标签查找。
@@ -10,6 +9,7 @@ Pandas 的 DataFrame 不像Spark中的DataFrame或者是Flink中的DataSet/DataS
 ### dataframe 删除行列
 1. del: 删除dataframe中指定的列，这个是直接影响当前的dataframe，注意 del是python中的内置语句，没有返回值。如：del df['a']
 2. drop：不会影响原来的dataframe，dop方法会返回一个删除了指定列的新的dataframe
+
 
 ### 项目
 1. https://github.com/hangsz/pandas-tutorial

@@ -21,8 +21,21 @@ print_br(df)
 
 print_line("replace 示例")
 print_br(df.replace('USA', 'USA1'))
+print_br(df.replace(['USA', 'UK'], ['USA1', 'UK1']))  # 分别替换
+print_br(df.replace(['USA', 'UK'], 'Other'))  # 分别替换
 print_br(df.nationality.replace('USA', 'USA1'))
 
 print_line("增加一行")
-print_line("增加一列")
+df.loc[99] = [7, 8, 9]
+print_br(df)
+
+print_line("[] 增加一列")
+df['H'] = [1, 2] * 3
+print_br(df)
+
+print_line("insert 增加一列")
+col_f = [1, 2] * 3
+df.insert(2, 'F', col_f)
+print_br(df)
+
 print_line("append")

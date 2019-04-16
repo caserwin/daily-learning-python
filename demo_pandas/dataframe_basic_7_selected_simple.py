@@ -10,8 +10,8 @@ data = [[1, 2, 3, 4],
 df = pd.DataFrame(data=data, index=['a', 'b', 'c'], columns=['A', 'B', 'C', 'D'])
 
 print_line("[]使用示例：根据column name获取")
-print_br(df['A'])       # 取出A列
-print_br(df[['A', 'B']])     # 取出A，B两列
+print_br(df['A'])  # 取出A列
+print_br(df[['A', 'B']])  # 取出A，B两列
 print_br(df[0:2])  # 取出前2行
 
 print_line("loc 使用示例：loc根据index name和 column name 定位元素")

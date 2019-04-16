@@ -35,6 +35,3 @@ print_br(df.tail(5))
 print_line("输出字段名")
 print_br(df.columns.values)
 
-print_line("检查空值 NaN")
-print_br(pd.isnull(df))
-print_br(pd.isnull(df.name))
