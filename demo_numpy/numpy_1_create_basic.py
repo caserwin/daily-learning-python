@@ -3,6 +3,7 @@
 # @Author  : yidxue
 import numpy as np
 from demo_pandas.function.util_function import *
+
 np.set_printoptions(precision=3)
 
 print_line("array to list")
@@ -30,9 +31,13 @@ print_br(np.ones(3))
 print_br(np.ones((3, 4)))
 
 print_line("numpy random create 3x4 array")
+print_br(np.random.randn(3))
 print_br(np.random.rand(3, 4))
 print_br(np.random.rand(3, 4) * 100)
+print_br(np.random.random(size=10))
+print_br(np.random.random(size=(3, 3)))
 print_br(np.random.randint(5, size=(3, 4)))
+print_br(np.random.randint(1, 5, size=(7,)))
 
 print_line("5x5 array of 0 with 1 on diagonal")
 print_br(np.eye(5))

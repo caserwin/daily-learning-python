@@ -5,7 +5,8 @@
 import numpy as np
 from demo_pandas.function.util_function import *
 
-np.set_printoptions(precision=3)
+np.set_printoptions(precision=2)
+# np.set_printoptions(formatter={'float_kind': lambda x: "%.2f" % x})
 
 arr = np.random.randint(5, size=(3, 4), dtype=int)
 print_line("原始数据")

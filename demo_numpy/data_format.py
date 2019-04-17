@@ -3,7 +3,5 @@
 # @Author  : yidxue
 import numpy as np
 
-
-float_formatter = lambda x: "%.2f" % x
-np.set_printoptions(formatter={'float_kind': float_formatter})
+np.set_printoptions(formatter={'float_kind': lambda x: "%.2f" % x})
 print(np.random.randn(5) * 10)

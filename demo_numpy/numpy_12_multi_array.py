@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time    : 2019-04-17 15:58
+# @Time    : 2019-04-17 20:01
 # @Author  : erwin
 import numpy as np
 from demo_pandas.function.util_function import *
@@ -19,17 +19,12 @@ print_br(np.subtract(arr1, arr2))
 print_br(np.multiply(arr1, arr2))
 print_br(np.divide(arr1, arr2))
 
-print_line("平方以及开方")
-print_br(np.power(arr1, 2))
-print_br(np.sqrt(arr1))
-
-print_line("sin/cos/log/abs")
-print_br(np.sin(arr1))
-print_br(np.cos(arr1))
-# print_br(np.log(arr1))
-print_br(np.abs(arr1))
-
-print_line("向上取整/向下取整/四舍五入")
-print_br(np.ceil(arr1))
-print_br(np.floor(arr1))
-print_br(np.round(arr1))
+print_line("多个向量间的集合操作")
+arr1 = np.array([1, 2, 3, 4, 5])
+arr2 = np.array([3, 4, 5, 6, 7])
+# 并集
+print_br(np.union1d(arr1, arr2))
+# 差集
+print_br(np.setdiff1d(arr1, arr2, assume_unique=True))
+# 交集
+print_br(np.intersect1d(arr1, arr2, assume_unique=True))

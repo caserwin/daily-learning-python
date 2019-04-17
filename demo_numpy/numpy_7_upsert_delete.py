@@ -18,3 +18,11 @@ print_br(np.insert(arr, 2, [[2, 2, 2, 2, 2]], axis=1))
 print_line("删除指定index的行/列")
 print_br(np.delete(arr, 3, axis=0))
 print_br(np.delete(arr, 1, axis=1))
+
+print_line("更新行")
+arr[1] = 4
+print_br(arr)
+
+print_line("更新元素")
+arr[1, 1] = 5
+print_br(arr)
