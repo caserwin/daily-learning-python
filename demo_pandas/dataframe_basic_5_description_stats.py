@@ -4,7 +4,7 @@
 # @Author  : erwin
 import numpy as np
 import pandas as pd
-from demo_pandas.function.util_function import *
+from common.util_function import *
 
 data = np.array([[3, 2, 3, 4],
                  [2, 5, 6, 8],

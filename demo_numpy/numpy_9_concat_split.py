@@ -3,7 +3,7 @@
 # @Time    : 2019-04-17 21:11
 # @Author  : erwin
 import numpy as np
-from demo_pandas.function.util_function import *
+from common.util_function import *
 
 np.set_printoptions(precision=3)
 

@@ -4,7 +4,7 @@
 # @Author  : erwin
 import pandas as pd
 import numpy as np
-from demo_pandas.function.util_function import *
+from common.util_function import *
 
 '''
 1. del: 删除dataframe中指定的列，这个是直接影响当前的dataframe，注意 del是python中的内置语句，没有返回值。如：del df['a']

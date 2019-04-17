@@ -3,7 +3,7 @@
 # @Time    : 2019-04-15 10:57
 # @Author  : erwin
 import pandas as pd
-from demo_pandas.function.util_function import *
+from common.util_function import *
 
 print_line("读取 CSV 格式的数据集")
 print_br(pd.read_json('./data/test.json'))

@@ -3,7 +3,7 @@
 # @Author  : yidxue
 import numpy as np
 import pandas as pd
-from demo_pandas.function.util_function import *
+from common.util_function import *
 
 print_line("基于numpy 构建")
 date_index = pd.date_range('20140729', periods=10, freq="5Min")

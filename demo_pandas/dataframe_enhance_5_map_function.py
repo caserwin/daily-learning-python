@@ -4,8 +4,7 @@
 # @Author  : erwin
 import numpy as np
 import pandas as pd
-from demo_pandas.function.util_function import *
-
+from common.util_function import *
 '''
 map ，Series 或 DataFrame列 都可以调用此方法。该方法接受一个函数或字典作为参数，应用于列的每一个元素，将元素值映射为另一个值。 多用于数据离散化。
 '''

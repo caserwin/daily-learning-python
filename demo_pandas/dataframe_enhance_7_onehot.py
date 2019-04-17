@@ -3,8 +3,7 @@
 # @Time    : 2019-04-16 15:23
 # @Author  : erwin
 import pandas as pd
-import numpy as np
-from demo_pandas.function.util_function import *
+from common.util_function import *
 
 df = pd.DataFrame({'column1': ['aa', 'bb', 'cc'], 'column2': ['dd', 'ee', 'ff']})
 

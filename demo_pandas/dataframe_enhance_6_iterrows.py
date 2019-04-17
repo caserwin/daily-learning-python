@@ -4,7 +4,7 @@
 # @Author  : erwin
 import pandas as pd
 import numpy as np
-from demo_pandas.function.util_function import *
+from common.util_function import *
 
 raw_data = {'name': ['Jason', 'Molly', np.nan, np.nan, np.nan],
             'nationality': ['USA', 'USA', 'France', 'UK', 'UK'],

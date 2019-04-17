@@ -3,7 +3,7 @@
 # @Time    : 2019-04-15 22:20
 # @Author  : erwin
 import pandas as pd
-from demo_pandas.function.util_function import *
+from common.util_function import *
 
 df = pd.DataFrame({'col1': ['a'] * 2 + ['b'] * 3, 'col2': [1, 1, 2, 3, 3]})
 

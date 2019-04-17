@@ -3,7 +3,7 @@
 # @Time    : 2019-04-16 16:44
 # @Author  : erwin
 import pandas as pd
-from demo_pandas.function.util_function import *
+from common.util_function import *
 
 print_line("方式1：value_list是数值，key_list是索引")
 print_br(pd.Series(range(4), index=["a", "b", "c", "d"]))

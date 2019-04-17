@@ -2,7 +2,7 @@
 # @Time    : 2018/10/3 下午2:36
 # @Author  : yidxue
 import pandas as pd
-from demo_pandas.function.util_function import *
+from common.util_function import *
 
 df = pd.DataFrame({"A": [1, 2, 3],
                    "B": [4, 5, 6],

@@ -4,7 +4,7 @@
 # @Author  : erwin
 import pandas as pd
 import numpy as np
-from demo_pandas.function.util_function import *
+from common.util_function import *
 
 rng = pd.date_range('1/1/2012', periods=100, freq='S')
 ts = pd.Series(np.random.randint(0, 10, len(rng)), index=rng)

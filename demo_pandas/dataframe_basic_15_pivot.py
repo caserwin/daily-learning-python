@@ -4,7 +4,7 @@
 # @Author  : erwin
 import pandas as pd
 import numpy as np
-from demo_pandas.function.util_function import *
+from common.util_function import *
 
 df = pd.DataFrame({'A': ['one', 'one', 'two'] * 4,
                    'B': ['A', 'B', 'C'] * 4,

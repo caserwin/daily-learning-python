@@ -4,7 +4,7 @@
 # @Author  : erwin
 import numpy as np
 import pandas as pd
-from demo_pandas.function.util_function import *
+from common.util_function import *
 
 '''
 bool 类型的[]和loc[]都可以拿来用

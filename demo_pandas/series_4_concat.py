@@ -3,7 +3,7 @@
 # @Time    : 2019-04-16 16:47
 # @Author  : erwin
 import pandas as pd
-from demo_pandas.function.util_function import *
+from common.util_function import *
 
 ser1 = pd.Series(range(4))
 ser2 = pd.Series(range(3))

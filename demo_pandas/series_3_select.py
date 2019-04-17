@@ -3,7 +3,7 @@
 # @Time    : 2019-04-16 16:47
 # @Author  : erwin
 import pandas as pd
-from demo_pandas.function.util_function import *
+from common.util_function import *
 
 pds = pd.Series({
     '1490707920': 16.8219660272,
