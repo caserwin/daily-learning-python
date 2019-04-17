@@ -3,8 +3,8 @@
 # @Author  : yidxue
 import pandas as pd
 import numpy as np
-import core.similarity.time_series_util.attenuate_weight1 as cl1
-import core.similarity.time_series_util.attenuate_weight2 as cl2
+import machine_learning.similarity.time_series_util.attenuate_weight1 as cl1
+import machine_learning.similarity.time_series_util.attenuate_weight2 as cl2
 import matplotlib.pyplot as plt
 
 dfStandardizedLOSS = pd.read_csv("test.csv")

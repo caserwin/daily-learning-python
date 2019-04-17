@@ -3,9 +3,8 @@
 # @Author  : yidxue
 import matplotlib.pyplot as plt
 from dtaidistance import dtw_visualisation as dtwvis
-import core.similarity.time_series_util.attenuate_weight1 as cl1
-import core.similarity.time_series_util.attenuate_weight2 as cl2
-from core.similarity.time_series_util.attenuate_weight1 import *
+import machine_learning.similarity.time_series_util.attenuate_weight1 as cl1
+import machine_learning.similarity.time_series_util.attenuate_weight2 as cl2
 
 float_formatter = lambda x: "%.2f" % x
 np.set_printoptions(formatter={'float_kind': float_formatter})

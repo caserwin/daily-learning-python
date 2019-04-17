@@ -4,7 +4,7 @@ import pandas as pd
 
 # ============================================================
 # 对于不同维度的数据集，以下参数要调整，才能画图
-df = pd.read_csv('./simple1.csv', sep=",", header=None)
+df = pd.read_csv('./data/simple1.csv', sep=",", header=None)
 matrix = df.values
 print(matrix)
 
@@ -16,6 +16,7 @@ ideo_colors = ['rgba(244, 109, 167, 0.75)', 'rgba(253, 174, 97, 0.75)', 'rgba(25
 radii_sribb = [0.4, 0.30, 0.35, 0.39, 0.12]  # these value are set after a few trials
 
 # ============================================================
+
 
 def check_data(data_matrix):
     L, M = data_matrix.shape

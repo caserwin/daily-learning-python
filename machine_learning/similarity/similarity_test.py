@@ -4,9 +4,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from dtaidistance import dtw
-from core.similarity.cos_similar import CosSimilarity
-from core.similarity.pearson_similar import PearsonSimilarity
-from core.similarity.time_series_similar import TimeSeriesSimilarity
+from machine_learning.similarity.cos_similar import CosSimilarity
+from machine_learning.similarity.pearson_similar import PearsonSimilarity
+from machine_learning.similarity.time_series_similar import TimeSeriesSimilarity
 
 x = np.arange(0, 15, .5)
 s1 = np.sin(x)

@@ -2,7 +2,7 @@
 # @Time    : 2019/1/24 上午10:09
 # @Author  : yidxue
 import numpy as np
-from core.similarity.time_series_similar import TimeSeriesSimilarity
+from machine_learning.similarity.time_series_similar import TimeSeriesSimilarity
 import matplotlib.pyplot as plt
 
 
