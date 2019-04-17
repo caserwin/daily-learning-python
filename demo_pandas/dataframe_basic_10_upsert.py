@@ -39,3 +39,5 @@ df.insert(2, 'F', col_f)
 print_br(df)
 
 print_line("append")
+df1 = pd.DataFrame([[1, 2, 3]], columns=['name', 'nationality', 'age'])
+print_br(df.append(df1, ignore_index=True, sort=True))  # ignore_index=False表示使用原index

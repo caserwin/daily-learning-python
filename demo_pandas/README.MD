@@ -21,7 +21,7 @@ Pandas 的 DataFrame 不像Spark中的DataFrame或者是Flink中的DataSet/DataS
 2. https://github.com/fengdu78/machine_learning_beginner/tree/master/pandas/Pandas_Exercises
 
 ### 参考
-1. [pandas dataframe](http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html)
-2. [pandas series](http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html)
+1. [pandas: powerful Python data analysis toolki](http://pandas.pydata.org/pandas-docs/stable/index.html)
+2. [Pandas Cheat Sheet — Python for Data Science](https://www.dataquest.io/blog/pandas-cheat-sheet/)
 3. [23种Pandas核心操作，你需要过一遍吗？](https://zhuanlan.zhihu.com/p/43018099)
 4. [十分钟搞定pandas](http://www.shizhuolin.com/2015/04/19/978.html?from=timeline&isappinstalled=0)

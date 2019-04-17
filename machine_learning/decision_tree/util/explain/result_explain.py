@@ -1,6 +1,6 @@
 # encoding:utf-8
 
-from decision_tree.util.explain.dic import test_dic
+from machine_learning.decision_tree.util.explain.dic import test_dic
 import collections
 
 

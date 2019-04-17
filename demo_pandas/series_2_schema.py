@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time    : 2019-04-16 16:46
+# @Time    : 2019-04-17 10:41
 # @Author  : erwin
 import pandas as pd
 from demo_pandas.function.util_function import *
@@ -13,10 +13,8 @@ data_dict_series = {
 }
 pds = pd.Series(data_dict_series, name='test')
 
-print_line("统计特性")
-print_br(pds.var())
-print_br(pds.mean())
-print_br(pds.values)
+print_line("基本属性")
 print_br(pds.index)
-print_br(pds.keys())
-print_br(pds.dropna())
+print_br(pds.name)
+print_br(pds.values)
+print_br(pds.dtype)

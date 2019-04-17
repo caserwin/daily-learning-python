@@ -35,3 +35,6 @@ print_br(df.tail(5))
 print_line("输出字段名")
 print_br(df.columns.values)
 
+print_line("查看字段值分布")
+print_br(df.apply(pd.Series.value_counts))
+print_br(df.A.value_counts())

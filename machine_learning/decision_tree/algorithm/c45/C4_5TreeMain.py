@@ -1,7 +1,5 @@
 # encoding:utf-8
-from decision_tree.algorithm.c45.C4_5Tree import *
-from decision_tree.util.explain.result_explain import TreeExplain
-import decision_tree.util.draw.treePlotter as tp
+from machine_learning.decision_tree.util.explain.result_explain import TreeExplain
 import json
 
 if __name__ == '__main__':
