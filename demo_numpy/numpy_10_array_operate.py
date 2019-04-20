@@ -20,4 +20,6 @@ flatten_arr = arr.flatten()
 print_br(flatten_arr)
 
 print_line("reshape")
-print_br(arr.reshape(3, 2))
+print_br(arr.reshape((3, 2)))
+print_br(arr.reshape((6, -1)))
+

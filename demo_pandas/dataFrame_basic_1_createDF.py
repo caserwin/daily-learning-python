@@ -25,6 +25,15 @@ df = pd.DataFrame(data={'columns1': ['a', 'b', 'c'],
                         'columns2': ['c', 'd', 'e']})
 print_br(df)
 
+print_line("基于字典-字典类型")
+data3 = {'A': {'a': 1, 'b': 4},
+         'B': {'a': 2, 'b': 5},
+         'C': {'a': 3, 'c': 6}}
+df = pd.DataFrame(data=data3)
+print_br(df)
+
 print_line("基于json字符串")
 print_br(pd.read_json("""[{"col1": "a", "col2": "1"}, {"col1": "b", "col2": "2"}]"""))
 print_br(pd.read_json('./data/test.json'))
+
+

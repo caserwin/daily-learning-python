@@ -6,6 +6,11 @@ import numpy as np
 import pandas as pd
 from common.util_function import *
 
+'''
+一维统计常用方法。
+sum()、mean()、std()、var()、max()、min()、median()
+'''
+
 data = np.array([[3, 2, 3, 4],
                  [2, 5, 6, 8],
                  [2, 3, 5, 9]])
@@ -18,8 +23,10 @@ print_line("查看指定字段的每个值个数分布情况")
 print_br(df.A.value_counts())
 
 print_line("Sum of values in a data frame")
-print_br(df.sum())
-print_br(df.A.sum())
+print_br(df.sum())  # 按列求和
+print_br(df.A.sum())  # 某列求和
+print_br(df.sum(axis='columns'))  # 按行求和
+print_br(df.loc['a'].sum())  # 某行求和
 
 print_line("Lowest value of a data frame")
 print_br(df.min())

@@ -16,6 +16,9 @@ print_br(df.describe(include='all'))
 print_line("查看缺少值和数据类型")
 print_br(df.info())
 
+print_line("内存显示：index：索引占用的内存，deep：数据存储占用的内存")
+print_br(df.memory_usage(index=True, deep=True))
+
 print_line("数据探索")
 print_br('数据框行数和列数：' + str(df.shape))
 print_br('数据框维度：' + str(df.ndim))
@@ -36,4 +39,4 @@ print_br(df.columns.values)
 
 print_line("查看字段值分布")
 print_br(df.apply(pd.Series.value_counts))
-print_br(df.A.value_counts())
+print_br(df.nationality.value_counts())
