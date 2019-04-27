@@ -3,12 +3,25 @@
 # @Time    : 2019-04-09 14:34
 # @Author  : erwin
 from multiprocessing import Pool
+from demo_opentsdb.opentsdb_conn import OpenTSDBClient
 import time
 
 
 def task(name):
     print('process %s is running' % name)
-    time.sleep(10)
+    # 插入opentsdb
+    oc = OpenTSDBClient()
+    tsdb_data = {
+        "metric": "sys.error501",
+        "timestamp": 1556076325,
+        "value": 12.3,
+        "tags": {
+            "component": 12.3
+        }
+    }
+
+    oc.single_insert(tsdb_data)
+    # time.sleep(3)
     print('process %s done' % name)
 
 
