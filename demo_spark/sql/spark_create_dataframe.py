@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2018/10/31 上午10:41
 # @Author  : yidxue
-
 import pandas as pd
 from pyspark.sql import SparkSession
+import datetime
+import time
+from demo_opentsdb.opentsdb_conn import OpenTSDBClient
 
 
 def create_df(spark):
@@ -17,12 +19,31 @@ def create_df(spark):
 
 
 if __name__ == '__main__':
-    spark = SparkSession \
-        .builder \
-        .appName("test") \
-        .config("spark.master", "local[*]") \
-        .getOrCreate()
+    # now_date = datetime.datetime.now().strftime("%Y-%m-%d") + " 00:00:00"
+    now_date = "2019-05-03 00:00:00"
+    pass_date = (datetime.datetime.now() + datetime.timedelta(days=-3)).strftime("%Y-%m-%d") + " 00:00:00"
 
-    df = create_df(spark)
-    df.printSchema()
-    df.show(20, truncate=False)
+    now_timestamp = int(time.mktime(time.strptime(now_date, '%Y-%m-%d %H:%M:%S')))
+    pass_timestamp = int(time.mktime(time.strptime(pass_date, '%Y-%m-%d %H:%M:%S')))
+
+    query_cond_dic = {
+        "start": pass_timestamp,
+        "end": now_timestamp,
+        "queries": [
+            {
+                "aggregator": "none",
+                "metric": "sys.error500.raw",
+                "tags": {
+                    "component": "meeting",
+                    # "servertype": ,
+                    "cluster": "AI",
+                    # "errortype":
+                }
+            }
+        ]
+    }
+
+    oc = OpenTSDBClient()
+    raw_data = oc.get_data_by_post(query_cond_dic)
+
+    print(raw_data)

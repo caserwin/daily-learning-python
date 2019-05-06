@@ -1,0 +1,69 @@
+[{
+		"metric": "sys.error501.raw",
+		"tags": {
+			"cluster": "AI",
+			"errortype": "mcrsvrmcrmres",
+			"component": "meeting",
+			"servertype": "mcrsvr"
+		},
+		"aggregateTags": [],
+		"dps": {
+			"1556726400": 604.236,
+			"1556726700": 440.642,
+			"1556727000": 261.565,
+			"1556727900": 288.524,
+			"1556728200": 491.46
+		}
+	},
+	{
+		"metric": "sys.error502.raw",
+		"tags": {
+			"cluster": "AI",
+			"errortype": "mcrsvrmcrmres",
+			"component": "meeting",
+			"servertype": "mcrsvr"
+		},
+		"aggregateTags": [],
+		"dps": {
+			"1556726400": 604.236,
+			"1556726700": 440.642,
+			"1556727000": 261.565,
+			"1556727900": 288.524,
+			"1556728200": 491.46
+		}
+	},
+	{
+		"metric": "sys.error503.raw",
+		"tags": {
+			"cluster": "AI",
+			"errortype": "mcrsvrmcrmres",
+			"component": "meeting",
+			"servertype": "mcrsvr"
+		},
+		"aggregateTags": [],
+		"dps": {
+			"1556726400": 604.236,
+			"1556726700": 440.642,
+			"1556727000": 261.565,
+			"1556727900": 288.524,
+			"1556728200": 491.46
+		}
+	},
+	{
+		"metric": "sys.error504.raw",
+		"tags": {
+			"cluster": "AI",
+			"errortype": "mcrsvrmcrmres",
+			"component": "meeting",
+			"servertype": "mcrsvr"
+		},
+		"aggregateTags": [],
+		"dps": {
+			"1556726400": 604.236,
+			"1556726700": 440.642,
+			"1556727000": 261.565,
+			"1556727900": 288.524,
+			"1556728200": 491.46
+		}
+	}
+]

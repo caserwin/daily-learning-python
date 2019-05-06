@@ -1,14 +1,23 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2018/10/31 上午10:34
 # @Author  : yidxue
-
 from pyspark.sql.functions import udf
 from pyspark.sql.types import BooleanType
 from pyspark.sql import SparkSession
-from demo_spark.sql.spark_create_dataframe import create_df
 import re
+import pandas as pd
 
 filter_text_udf = udf(lambda z: filter_text(z), BooleanType())
+
+
+def create_df(spark):
+    df_pd = pd.DataFrame(
+        data={'col1': [1, 2, 3],
+              'col2': [-1.0, 0.5, 2.7],
+              'col3': [[1, 2], [3, 4, 5], [6, 7, 8, 9]],
+              'col4': ["text1", "text2 aa", "text3 cc"]}
+    )
+    return spark.createDataFrame(df_pd)
 
 
 def filter_text(text):

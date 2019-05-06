@@ -19,6 +19,7 @@ print_line("基于列表-字典类型")
 dic_ls = [{'col1': 'a', 'col2': '1'},
           {'col1': 'b', 'col2': '2'}]
 print_br(pd.DataFrame(data=dic_ls))
+print_br(pd.DataFrame.from_records(data=dic_ls))
 
 print_line("基于字典-列表类型")
 df = pd.DataFrame(data={'columns1': ['a', 'b', 'c'],
@@ -35,5 +36,3 @@ print_br(df)
 print_line("基于json字符串")
 print_br(pd.read_json("""[{"col1": "a", "col2": "1"}, {"col1": "b", "col2": "2"}]"""))
 print_br(pd.read_json('./data/test.json'))
-
-
