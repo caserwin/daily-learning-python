@@ -75,7 +75,7 @@ data_dict = read_file(path_ls)
 
 # 3. 每个cluster时间戳进行排序
 DESC = False
-## 列表推导生成字典，这个字典的value的是排序后的另一个字典
+# 列表推导生成字典，这个字典的value的是排序后的另一个字典
 data_sort = {
     cluster: sorted(data_dict[cluster].items(), key=lambda d: datetime.datetime.strptime(d[0], '%Y-%m-%d %H:%M:%S'),
                     reverse=DESC)

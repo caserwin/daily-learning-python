@@ -5,8 +5,13 @@
 import datetime
 import time
 from demo_opentsdb.opentsdb_conn import OpenTSDBClient
+import pandas as pd
 
-train_day = 10
+pd.set_option('display.max_columns', 1000)
+pd.set_option('display.width', 1000)
+pd.set_option('display.max_colwidth', 1000)
+
+train_day = 1
 now_date = datetime.datetime.now().strftime("%Y-%m-%d") + " 00:00:00"
 pass_date = (datetime.datetime.now() + datetime.timedelta(days=-train_day)).strftime("%Y-%m-%d") + " 00:00:00"
 
@@ -21,16 +26,20 @@ query_cond_dic = {
             "aggregator": "none",
             "metric": "sys.error500.raw",
             "tags": {
-                "component": "component1",
-                "servertype": "stype1",
-                "cluster": "XYD",
-                "errortype": "etype1"
+                "cluster": "L",
             }
         }
     ]
 }
 
 oc = OpenTSDBClient()
-raw_data = oc.get_data_by_post(query_cond_dic)
+raw_datas = oc.get_data_by_post_all(query_cond_dic)
 
-print(raw_data)
+# OpenTSDB 数据转成 Pandas DataFrame
+records = {data.get("tags").get("cluster") + "_" + data.get("tags").get("errortype"): data.get("dps") for data in
+           raw_datas}
+
+df = pd.DataFrame(data=records)
+print(df.head(100))
+
+df.to_csv("./opentsdb_L.csv", sep=",", index=True, header=True)

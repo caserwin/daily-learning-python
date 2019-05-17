@@ -13,7 +13,7 @@ warnings.filterwarnings("ignore")
 from pandas.tseries.offsets import *
 from datetime import datetime as dt
 
-operDF = pd.read_json('data/mng20days_B.json')
+operDF = pd.read_json('./test_fbprophet.json')
 operDF.columns = ["timeMins", "500rate"]
 operDF = operDF.sort_values("timeMins").copy()
 

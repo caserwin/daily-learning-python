@@ -1,18 +1,17 @@
 import logging
 import pandas as pd
-
-logging.getLogger('fbprophet').setLevel(logging.ERROR)
 import warnings
-
-warnings.filterwarnings("ignore")
 from dtaidistance import dtw_visualisation as dtwvis
+from dtaidistance import clustering
 from dtaidistance import dtw
 import numpy as np
+
+logging.getLogger('fbprophet').setLevel(logging.ERROR)
+warnings.filterwarnings("ignore")
 
 dfStandardizedJMT = pd.read_csv("dfStandardizedJMT.csv")
 series = np.matrix(dfStandardizedJMT.T)
 ds = dtw.distance_matrix_fast(series)
-from dtaidistance import clustering
 
 # Custom Hierarchical clustering
 model1 = clustering.Hierarchical(dtw.distance_matrix_fast, {})

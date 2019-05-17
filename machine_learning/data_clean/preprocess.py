@@ -78,7 +78,3 @@ from sklearn.preprocessing import Binarizer
 df['JMT'] = pd.cut(df['JMT'], bins=[0, 30, 50, 100, 200], labels=['a', 'b', 'c', 'd'], include_lowest=True).head(100)
 a = LabelEncoder().fit_transform(df['JMT'])
 
-# ===============  特征二值化 ===============
-
-
-# ===============  评估函数 ===================

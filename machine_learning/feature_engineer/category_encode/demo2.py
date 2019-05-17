@@ -1,6 +1,5 @@
-
 import pandas as pd
-from machine_learning.feature_engineer.category_encode import UserLabel
+from machine_learning.feature_engineer.category_encode.user_label import UserLabel
 
 if __name__ == '__main__':
 

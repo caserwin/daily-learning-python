@@ -3,6 +3,7 @@
 # @Author  : yidxue
 # 有序字典
 import collections
+import operator
 
 dic1 = collections.OrderedDict()
 dic1['k1'] = 'v1'
@@ -10,8 +11,9 @@ dic1['k2'] = 'v2'
 dic1['k3'] = 'v3'
 print(dic1)
 
-dic1 = collections.OrderedDict({"a": 1, "b": 2, "c": 3})
+dic1 = collections.OrderedDict({"a": 2.11, "b": 3.5, "c": 1.4})
 print(dic1)
+print(max(dic1.items(), key=operator.itemgetter(1))[0])
 
 
 class Person1(object):
