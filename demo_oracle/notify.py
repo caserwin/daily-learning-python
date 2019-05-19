@@ -3,7 +3,7 @@
 
 import smtplib
 from email.mime.text import MIMEText
-import cx_Oracle  # 引用模块cx_Oracle
+import cx_Oracle
 
 
 class Client:
@@ -32,8 +32,8 @@ class Client:
 
 class OracleService:
     def __init__(self):
-        self.dsnStr = cx_Oracle.makedsn("10.252.10.14", "1521", "stapdb")
-        self.conn = cx_Oracle.connect(user="stapuser", password="se#0stpdb", dsn=self.dsnStr)
+        self.dsnStr = cx_Oracle.makedsn("127.0.0.1", "1521", "sid")
+        self.conn = cx_Oracle.connect(user="xyd", password="xxxx", dsn=self.dsnStr)
         self.cur = self.conn.cursor()  # 获取cursor
 
     def get_data(self, day):
@@ -45,7 +45,7 @@ class OracleService:
         print(sql)
         self.cur.execute(sql)  # 使用cursor进行各种操作
         dap_jmfoverall_row = self.cur.fetchone()
-        self.cur.close()  # 关闭cursor
+        self.cur.close()
         self.conn.close()
         return dap_jmfuser_row[0], dap_jmfoverall_row
 
