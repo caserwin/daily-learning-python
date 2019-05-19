@@ -2,11 +2,10 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2019-04-17 17:16
 # @Author  : erwin
-import time
 from io import BytesIO
 from urllib.request import urlopen
 from zipfile import ZipFile
-from demo_opentsdb.opentsdb_conn import OpenTSDBClient
+from component.demo_opentsdb.opentsdb_conn import OpenTSDBClient
 import pandas as pd
 
 remote_zip = urlopen('https://archive.ics.uci.edu/ml/machine-learning-databases/00357/occupancy_data.zip')

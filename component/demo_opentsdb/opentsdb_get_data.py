@@ -4,7 +4,7 @@
 # @Author  : erwin
 import datetime
 import time
-from demo_opentsdb.opentsdb_conn import OpenTSDBClient
+from component.demo_opentsdb.opentsdb_conn import OpenTSDBClient
 import pandas as pd
 
 pd.set_option('display.max_columns', 1000)

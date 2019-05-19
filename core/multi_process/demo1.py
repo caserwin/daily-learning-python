@@ -3,7 +3,7 @@
 # @Time    : 2019-04-09 14:34
 # @Author  : erwin
 from multiprocessing import Pool
-from demo_opentsdb.opentsdb_conn import OpenTSDBClient
+from component.demo_opentsdb.opentsdb_conn import OpenTSDBClient
 import time
 
 

@@ -2,10 +2,9 @@
 # @Time    : 2018/10/31 上午10:41
 # @Author  : yidxue
 import pandas as pd
-from pyspark.sql import SparkSession
 import datetime
 import time
-from demo_opentsdb.opentsdb_conn import OpenTSDBClient
+from component.demo_opentsdb.opentsdb_conn import OpenTSDBClient
 
 
 def create_df(spark):
