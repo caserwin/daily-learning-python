@@ -15,6 +15,16 @@ Pandas 的 DataFrame 不像Spark中的DataFrame或者是Flink中的DataSet/DataS
 1. del: 删除dataframe中指定的列，这个是直接影响当前的dataframe，注意 del是python中的内置语句，没有返回值。如：del df['a']
 2. drop：不会影响原来的dataframe，dop方法会返回一个删除了指定列的新的dataframe
 
+### 显示完整数据
+```
+# 显示所有列
+pd.set_option('display.max_columns', None)
+# 显示所有行
+pd.set_option('display.max_rows', None)
+# 设置value的显示长度为100，默认为50
+pd.set_option('max_colwidth', 100)
+
+```
 
 ### 项目
 1. https://github.com/hangsz/pandas-tutorial

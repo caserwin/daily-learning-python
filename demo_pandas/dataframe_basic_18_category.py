@@ -58,3 +58,7 @@ print_br(c)
 print_line("Category 查询：可以采用[]来查看，不支持loc[]和iloc[]方式")
 print_br(c[0:2])
 print_br(c[[True, False, True]])
+
+print_line("from_codes")
+print_br(pd.Categorical.from_codes([1, 2, 1, 0], ["A", "B", "C"]))
+print_br(pd.Categorical.from_codes([0, 1, 2, 1], ["A", "B", "C"]))
