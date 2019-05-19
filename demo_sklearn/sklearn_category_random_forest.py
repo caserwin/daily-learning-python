@@ -32,7 +32,7 @@ print_line("2. 构建训练数据和测试数据")
 train, test = df[df['is_train'] == True], df[df['is_train'] == False]
 
 features = df.columns[:4]
-clf = RandomForestClassifier(n_estimators=13, max_depth=3, random_state=10, n_jobs=-1)
+clf = RandomForestClassifier(n_estimators=20, max_depth=4, max_features='sqrt', oob_score=True, n_jobs=-1)
 y = train['label'].values
 clf.fit(train[features], y)
 test_pred = clf.predict(test[features])
