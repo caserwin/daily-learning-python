@@ -11,7 +11,7 @@ def open_txt(in_path):
     """
     context = ''
     # in_path = unicode(in_path, "utf8")
-    with open(in_path, "r") as in_file:
+    with open(in_path, "rb") as in_file:
         for line in in_file:
             context += line.decode("unicode_escape")
     print(context)

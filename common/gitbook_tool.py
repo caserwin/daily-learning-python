@@ -2,7 +2,7 @@
 # @Time    : 2018/8/3 下午12:36
 # @Author  : yidxue
 
-import core.util.file_util as fu
+import common.file_util as fu
 import re
 
 if __name__ == '__main__':

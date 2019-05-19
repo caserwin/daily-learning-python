@@ -2,12 +2,12 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2019-05-15 10:22
 # @Author  : erwin
-import pandas as pd
 import numpy as np
+import pandas as pd
 from sklearn.preprocessing import StandardScaler
 
 
-def customizedStandardize(df, startIndex):
+def customized_standardize(df, startIndex):
     temp = df.reset_index()
     scaler = StandardScaler()
     scaler.fit(temp.iloc[:, range(startIndex, temp.columns.size)])
@@ -28,8 +28,8 @@ if __name__ == '__main__':
     df = pd.DataFrame(data=data, dtype=float)
 
     print(df)
-    clusterPivotStd1 = customizedStandardize(df, 1)
+    clusterPivotStd1 = customized_standardize(df, 1)
     print(clusterPivotStd1)
 
-    clusterPivotStd1 = customizedStandardize(df, 2)
+    clusterPivotStd1 = customized_standardize(df, 2)
     print(clusterPivotStd1)

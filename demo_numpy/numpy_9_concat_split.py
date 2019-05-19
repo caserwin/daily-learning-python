@@ -13,9 +13,13 @@ print_line("原始数据")
 print_br(arr1)
 print_br(arr2)
 
-print_line("行/列拼接")
+print_line("行/列拼接方式1")
 print_br(np.concatenate((arr1, arr2), axis=0))
 print_br(np.concatenate((arr1, arr2), axis=1))
+
+print_line("行/列拼接方式2")
+print_br(np.r_[arr1, arr2])
+print_br(np.c_[arr1, arr2])
 
 print_line("行/列切分")
 print_br(np.split(arr1, 3))

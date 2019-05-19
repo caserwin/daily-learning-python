@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2019-04-13 16:05
 # @Author  : erwin
-from core.util.file_util import FileUtil
+from common.file_util import FileUtil
 import json
 
 

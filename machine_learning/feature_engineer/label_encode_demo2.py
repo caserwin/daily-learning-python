@@ -36,5 +36,5 @@ if __name__ == '__main__':
 
     # 方式三：加载模型的方式
     # joblib.dump(le, "label1.m")
-    le = joblib.load("label1.m")
+    le = joblib.load("./model/label1.m")
     print(le.transform(["a2", "a2", "a3"]))

@@ -30,6 +30,7 @@ class HDFSService(object):
         file_name_ls = self.client.listdir(hdfs_path)
         return map(lambda file_name: hdfs_path + self.sep + file_name, file_name_ls)
 
+
 if __name__ == '__main__':
     print(HDFSService().file_if_exist('/cisco/json-2018-01-13'))
     print(HDFSService().download_from_hdfs('/cisco/json-2018-01-13', '/Users/cisco/json-2018-01-13.txt'))
