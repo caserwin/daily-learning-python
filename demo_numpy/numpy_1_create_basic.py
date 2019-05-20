@@ -31,7 +31,6 @@ print_br(np.ones(3))
 print_br(np.ones((3, 4)))
 
 print_line("numpy random create 3x4 array")
-print_br(np.random.randn(3))
 print_br(np.random.rand(3, 4))
 print_br(np.random.rand(3, 4) * 100)
 print_br(np.random.random(size=10))
