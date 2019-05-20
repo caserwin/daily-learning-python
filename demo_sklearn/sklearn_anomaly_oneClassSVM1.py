@@ -9,11 +9,25 @@ matplotlib.use('TkAgg')
 from sklearn import svm
 from common.util_function import *
 from common.pickle_helper import store_model
+from sklearn.model_selection import GridSearchCV
 
 """
 https://scikit-learn.org/stable/modules/generated/sklearn.svm.OneClassSVM.html#sklearn.svm.OneClassSVM
 """
-np.random.seed(42)
+np.random.seed(41)
+
+
+class MyOneClassSVM(svm.OneClassSVM):
+    def score(self, X, y):
+        # 采用准确率，作为score 计算方式
+        pred = clf.predict(X)
+        num = 0
+        for i, j in zip(y, pred):
+            if i == j:
+                num = num + 1
+
+        return num / len(pred)
+
 
 print_line("1. 构建训练数据集")
 X = 0.3 * np.random.randn(100, 2)
@@ -54,7 +68,21 @@ print_br(TP / TP_FN)
 print_line("4. 使用自定义的数据")
 user_define = np.array([(2, 3), (5, 6), (2.3, 1.8)])
 # -1表示异常点，1表示正常点。
-print(clf.predict(user_define))
+print_br(clf.predict(user_define))
 
 print_line("5. 存模型文件")
 store_model(clf, "./model/one_class_svm.pkl")
+
+print_line("6. 参数搜索")
+model = MyOneClassSVM()
+param_list = {'nu': np.arange(0.05, 1, 0.05),
+              'kernel': ["rbf", "linear", "poly", "sigmoid"],
+              "gamma": np.arange(0.01, 1, 0.05)}
+gsearch = GridSearchCV(estimator=model, param_grid=param_list, cv=5, n_jobs=-1)
+gsearch.fit(train, [1] * 200 + [-1] * 20)
+
+print_br(str(gsearch.best_params_) + "," + str(gsearch.best_score_))
+
+print_line("7. 所有参数和相应评分")
+for param, score in zip(gsearch.cv_results_['params'], gsearch.cv_results_['mean_test_score']):
+    print(param, score)
