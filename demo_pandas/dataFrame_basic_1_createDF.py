@@ -5,6 +5,13 @@ import numpy as np
 import pandas as pd
 from common.util_function import *
 
+# 显示所有列
+pd.set_option('display.max_columns', None)
+# 显示所有行
+pd.set_option('display.max_rows', None)
+# 设置value的显示长度为100，默认为50
+pd.set_option('max_colwidth', 100)
+
 print_line("基于numpy 构建")
 date_index = pd.date_range('20140729', periods=10, freq="5Min")
 print_br(pd.DataFrame(np.random.randn(10, 5), columns=['a', 'b', 'c', 'd', 'e'], index=date_index))

@@ -5,6 +5,9 @@
 import pandas as pd
 import numpy as np
 from common.util_function import *
+from functools import reduce
+
+np.random.seed(1)
 
 df = pd.DataFrame({'A': ['foo', 'bar', 'foo', 'bar',
                          'foo', 'bar', 'foo', 'foo'],
@@ -15,7 +18,28 @@ df = pd.DataFrame({'A': ['foo', 'bar', 'foo', 'bar',
 print_line("原始数据")
 print_br(df)
 
-print_line("聚合数据")
+print_line("聚合示例1")
 print_br(df.groupby('A').sum())
 print_br(df.groupby(['A', 'B']).sum())
 print_br(df.groupby('A').count())  # 等价于 df.A.value_counts()
+
+print_line("聚合示例2")
+
+
+def sum(series):
+    return reduce(lambda x, y: x + y, series)
+
+
+def sum_multi(s1, s2):
+    count = 0
+    for i, j in zip(s1, s2):
+        count = count + i * j
+    return count / len(s1)
+
+
+res_df = df.groupby(['A']).agg({
+    'C': sum,
+    'D': sum,
+})
+
+print_br(res_df)

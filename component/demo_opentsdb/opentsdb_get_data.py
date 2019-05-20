@@ -11,7 +11,7 @@ pd.set_option('display.max_columns', 1000)
 pd.set_option('display.width', 1000)
 pd.set_option('display.max_colwidth', 1000)
 
-train_day = 1
+train_day = 10
 now_date = datetime.datetime.now().strftime("%Y-%m-%d") + " 00:00:00"
 pass_date = (datetime.datetime.now() + datetime.timedelta(days=-train_day)).strftime("%Y-%m-%d") + " 00:00:00"
 
@@ -25,6 +25,7 @@ query_cond_dic = {
         {
             "aggregator": "none",
             "metric": "sys.error500.raw",
+            # "downsample": "30m-avg",
             "tags": {
                 "cluster": "L",
             }
