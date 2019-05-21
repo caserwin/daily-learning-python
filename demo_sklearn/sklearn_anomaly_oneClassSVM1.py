@@ -30,56 +30,51 @@ class MyOneClassSVM(svm.OneClassSVM):
 
 
 print_line("1. 构建训练数据集")
-X = 0.3 * np.random.randn(100, 2)
-X_outliers = np.random.uniform(low=-4, high=4, size=(20, 2))
-train = np.r_[X + 2, X - 2, X_outliers]
+normal_sample_count = 1000
+X = 0.5 * np.random.randn(normal_sample_count, 2)
+normal_train = np.r_[X + 2, X - 2]
+X_outliers = np.random.uniform(low=-4, high=4, size=(40, 2))
 
 print_line("2. 训练和预测模型")
 clf = svm.OneClassSVM(nu=0.1, kernel="rbf", gamma=0.1)
-clf.fit(train)
-pred = clf.predict(train)
-print_br(pred)
+clf.fit(normal_train)
 
-print_line("3. 结果评估")
-error_num = 0
-true_data = [1] * 200 + [-1] * 20
-for i, j in zip(true_data, pred):
+print_line("3. 正样本评估")
+normal_pred = clf.predict(normal_train)
+print_br(normal_pred)
+
+normal_error_num = 0
+true_data = [1] * 200
+for i, j in zip(true_data, normal_pred):
     if i != j:
-        error_num = error_num + 1
+        normal_error_num = normal_error_num + 1
 
-recall_num = 0
-for i, j in zip([-1] * 20, pred[200:]):
+print_br("正样本精确率")
+print_br(1 - normal_error_num / len(normal_train))
+
+print_line("4. 负样本评估")
+outliers_normal_pred = clf.predict(X_outliers)
+print_br(outliers_normal_pred)
+
+outliers_error_num = 0
+true_data = [-1] * 40
+for i, j in zip(true_data, outliers_normal_pred):
     if i != j:
-        recall_num = recall_num + 1
+        outliers_error_num = outliers_error_num + 1
 
-TP_FP = len(list(filter(lambda num: True if num == -1 else False, pred)))
-TP = len(list(filter(lambda num: True if num == -1 else False, pred[200:])))
-TP_FN = 20
-
-print_br("精确率")
-print_br(1 - error_num / 220)
-
-print_br("准确率")
-print_br(TP / TP_FP)
-
-print_br("召回率")
-print_br(TP / TP_FN)
-
-print_line("4. 使用自定义的数据")
-user_define = np.array([(2, 3), (5, 6), (2.3, 1.8)])
-# -1表示异常点，1表示正常点。
-print_br(clf.predict(user_define))
+print_br("负样本精确率")
+print_br(1 - outliers_error_num / len(X_outliers))
 
 print_line("5. 存模型文件")
 store_model(clf, "./model/one_class_svm.pkl")
 
 print_line("6. 参数搜索")
 model = MyOneClassSVM()
-param_list = {'nu': np.arange(0.05, 1, 0.05),
+param_list = {'nu': np.arange(0.05, 1, 0.1),
               'kernel': ["rbf", "linear", "poly", "sigmoid"],
-              "gamma": np.arange(0.01, 1, 0.05)}
+              "gamma": np.arange(0.01, 1, 0.1)}
 gsearch = GridSearchCV(estimator=model, param_grid=param_list, cv=5, n_jobs=-1)
-gsearch.fit(train, [1] * 200 + [-1] * 20)
+gsearch.fit(normal_train, [1] * 2 * normal_sample_count)
 
 print_br(str(gsearch.best_params_) + "," + str(gsearch.best_score_))
 

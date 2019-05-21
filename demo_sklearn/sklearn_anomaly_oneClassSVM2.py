@@ -10,46 +10,28 @@ from common.pickle_helper import store_model
 np.random.seed(41)
 
 print_line("1. 构建训练数据集")
-X = 0.3 * np.random.randn(100, 2)
-X_outliers = np.random.uniform(low=-4, high=4, size=(20, 2))
-train = np.r_[X + 2, X - 2, X_outliers]
+normal_sample_count = 500
+X = 0.5 * np.random.randn(normal_sample_count, 2)
+normal_train = np.r_[X + 2, X - 2]
+X_outliers = np.random.uniform(low=-4, high=4, size=(40, 2))
+print_br(normal_train)
 
-print_br(train)
 print_line("2. 训练和预测模型")
-clf = svm.OneClassSVM(nu=0.05, kernel="rbf", gamma=0.1)
-clf.fit(train)
-pred = clf.predict(train)
-print_br(pred)
+clf = svm.OneClassSVM(nu=0.1, kernel="rbf", gamma=0.1)
+clf.fit(normal_train)
 
-print_line("3. 结果评估")
-error_num = 0
-true_data = [1] * 200 + [-1] * 20
-for i, j in zip(true_data, pred):
-    if i != j:
-        error_num = error_num + 1
+print_line("3. 正样本评估")
+normal_pred = clf.predict(normal_train)
+print_br(normal_pred)
 
-recall_num = 0
-for i, j in zip([-1] * 20, pred[200:]):
-    if i != j:
-        recall_num = recall_num + 1
+print_line("4. 负样本评估")
+outliers_normal_pred = clf.predict(X_outliers)
+print_br(outliers_normal_pred)
 
-TP_FP = len(list(filter(lambda num: True if num == -1 else False, pred)))
-TP = len(list(filter(lambda num: True if num == -1 else False, pred[200:])))
-TP_FN = 20
-
-print_br("精确率")
-print_br(1 - error_num / 220)
-
-print_br("准确率")
-print_br(TP / TP_FP)
-
-print_br("召回率")
-print_br(TP / TP_FN)
-
-print_line("4. 使用自定义的数据")
+print_line("5. 使用自定义的数据")
 user_define = np.array([(2, 3), (5, 6), (2.3, 1.8)])
 # -1表示异常点，1表示正常点。
 print(clf.predict(user_define))
 
-print_line("5. 存模型文件")
+print_line("6. 存模型文件")
 store_model(clf, "./model/one_class_svm_optimization.pkl")
