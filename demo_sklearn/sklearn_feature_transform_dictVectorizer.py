@@ -16,10 +16,11 @@ data = [
 df = pd.DataFrame(data=data)
 
 print_line("2. 拟合模型")
-vec = DictVectorizer()
+vec = DictVectorizer(sparse=False)
+# vec = DictVectorizer(sparse=True)  # transform 结果必须通过 .toarray() 转化为矩阵
+
 vec.fit(df.to_dict(orient='record'))
-res = vec.transform(df.to_dict(orient='record')).toarray()
-print(res)
+print(vec.transform(df.to_dict(orient='record')))
 print(vec.get_feature_names())
 
 print_line("3. 拟合新的数据")
@@ -28,4 +29,4 @@ new_data = [
     {'city': 'London1', 'temperature': 2}
 ]
 
-print_br(vec.transform(new_data).toarray())
+print_br(vec.transform(new_data))

@@ -21,6 +21,7 @@ class MyOneClassSVM(svm.OneClassSVM):
     def score(self, X, y):
         # 采用准确率，作为score 计算方式
         pred = clf.predict(X)
+        print(len(X))
         num = 0
         for i, j in zip(y, pred):
             if i == j:
@@ -30,7 +31,7 @@ class MyOneClassSVM(svm.OneClassSVM):
 
 
 print_line("1. 构建训练数据集")
-normal_sample_count = 1000
+normal_sample_count = 200
 X = 0.5 * np.random.randn(normal_sample_count, 2)
 normal_train = np.r_[X + 2, X - 2]
 X_outliers = np.random.uniform(low=-4, high=4, size=(40, 2))
