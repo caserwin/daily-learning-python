@@ -4,6 +4,7 @@
 # @Author  : erwin
 import pandas as pd
 from common.util_function import *
+from common.pickle_helper import *
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction import DictVectorizer
 from xgboost import XGBClassifier
@@ -47,3 +48,5 @@ print(xgbc.score(X_test, y_test))
 '''
 print(vec.feature_names_)
 print(xgbc.feature_importances_)
+
+store_model(xgbc, "./model/xgboost.pkl")

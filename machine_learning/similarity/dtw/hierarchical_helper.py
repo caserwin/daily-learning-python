@@ -42,7 +42,7 @@ class ClusterHelper(object):
 
 
 class HierarchicalHelper(object):
-    def __init__(self, linkage_tree):
+    def __init__(self, linkage_tree, dist_matrix, col_name):
         """
         :param tree:
         linkage_tree is dtaidistance.clustering import LinkageTree
@@ -50,6 +50,8 @@ class HierarchicalHelper(object):
         _, _, dist, cnt = linkage_tree.get_linkage(linkage_tree.maxnode)
         self.root = TreeNode(idx=linkage_tree.maxnode, data=[dist, cnt])
         self.linkage_tree = linkage_tree
+        self.dist_matrix = dist_matrix
+        self.col_name = col_name
         self.idx_node_map = {}
         self.buildTree(self.root, None, linkage_tree.maxnode)
 
