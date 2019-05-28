@@ -24,7 +24,7 @@ print_br(df.columns.values)
 print_line("类型转换")
 df['C'] = df['C'].astype(float)
 pd.to_numeric(df["D"], errors='coerce')
-df.E = df.E.astype(str)
+df.E = df.E.apply(lambda x: str(x))
 print_br(df.dtypes)
 
 print_line("reindex")

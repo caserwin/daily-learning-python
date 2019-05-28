@@ -24,3 +24,4 @@ print_br(arr[[True, False, True]])
 
 print_line("boolean 索引 + 切片操作")
 print_br(arr[[True, False, True], 0:2])
+print_br(arr[:, [True, False, True]])
