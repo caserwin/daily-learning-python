@@ -2,15 +2,13 @@
 # -*- coding: utf-8 -*-
 # @Time : 2019/5/19 下午7:08
 # @Author : Erwin
-import matplotlib
 import numpy as np
-
-matplotlib.use('TkAgg')
 from sklearn import svm
 from common.util_function import *
 from common.pickle_helper import store_model
 from sklearn.model_selection import GridSearchCV
-
+import matplotlib
+matplotlib.use('TkAgg')
 """
 https://scikit-learn.org/stable/modules/generated/sklearn.svm.OneClassSVM.html#sklearn.svm.OneClassSVM
 """
