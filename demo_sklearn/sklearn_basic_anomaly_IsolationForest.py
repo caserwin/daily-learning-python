@@ -19,7 +19,7 @@ train = np.r_[X + 2, X - 2, X_outliers]
 
 print_line("2. 训练和预测模型")
 # 默认参数：n_estimators =100， max_samples=256
-clf = IsolationForest(n_estimators=100, max_samples=50, random_state=1, contamination=0.1)
+clf = IsolationForest(n_estimators=100, max_samples=50, random_state=1, contamination=0.1, behaviour='new')
 clf.fit(train)
 pred = clf.predict(train)
 print_br(pred)

@@ -49,7 +49,7 @@ print_br(1 - outliers_error_num / len(X_outliers))
 print_line("5. 使用自定义的数据")
 user_define = np.array([(2, 3), (5, 6), (2.3, 1.8)])
 # -1表示异常点，1表示正常点。
-print(clf.predict(user_define))
+print_br(clf.predict(user_define))
 
 print_line("6. 存模型文件")
 store_model(clf, "./model/one_class_svm_optimization.pkl")

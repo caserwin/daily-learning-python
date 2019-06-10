@@ -24,7 +24,7 @@ print_br(grid.best_params_)
 
 print_line("2. 拿到最优参数后，重新训练模型")
 X_scaled = StandardScaler().fit_transform(X)
-clf = LogisticRegression(penalty='l1', C=1, solver='liblinear')
+clf = LogisticRegression(penalty='l2', C=1, solver='liblinear')
 clf.fit(X_scaled, y)
 
 print_line("3. 根据第2步的模型来选择最优几个特征")

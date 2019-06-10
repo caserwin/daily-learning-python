@@ -11,5 +11,9 @@ pd.set_option('display.max_rows', None)
 # 设置value的显示长度为100，默认为50
 pd.set_option('max_colwidth', 100)
 
+"""
+https://www.cnblogs.com/pinard/p/6143927.html
+"""
+
 titanic = pd.read_csv('./data/titanic.txt')
 print(titanic.head())
