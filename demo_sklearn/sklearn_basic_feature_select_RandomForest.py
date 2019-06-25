@@ -36,4 +36,4 @@ y = train['label'].values
 clf.fit(train[features], y)
 
 print_line("4. 特征重要性")
-print(clf.feature_importances_)
+print_br(clf.feature_importances_)

@@ -36,7 +36,7 @@ print_br(df.none.fillna(value=5))
 
 print_line("填充均值/中位数/众数")
 # inplace=True 表示在原来的 dataframe 上修改，inplace=False 表示返回新的 dataframe。
-df_tmp = df['age'].fillna(df['age'].mean(), inplace=False)
+df_tmp = df['age'].fillna(df['age'].mean(), inplace=True)
 print_br(df_tmp)
 df_tmp = df['age'].fillna(df['age'].median(), inplace=False)
 print_br(df_tmp)

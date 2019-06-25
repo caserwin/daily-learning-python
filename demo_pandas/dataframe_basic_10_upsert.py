@@ -20,7 +20,7 @@ df.loc[(df.nationality == 'UK'), 'age'] = 10
 print_br(df)
 
 print_line("replace 示例")
-print_br(df.replace('USA', 'USA1'))
+print_br(df.replace(to_replace='USA', value='USA1', inplace=True)) # inplace=True，表示直接替换原数据
 print_br(df.replace(['USA', 'UK'], ['USA1', 'UK1']))  # 分别替换
 print_br(df.replace(['USA', 'UK'], 'Other'))  # 分别替换
 print_br(df.nationality.replace('USA', 'USA1'))

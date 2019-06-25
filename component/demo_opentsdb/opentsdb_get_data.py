@@ -11,13 +11,15 @@ pd.set_option('display.max_columns', 1000)
 pd.set_option('display.width', 1000)
 pd.set_option('display.max_colwidth', 1000)
 
-train_day = 10
+train_day = 1
 now_date = datetime.datetime.now().strftime("%Y-%m-%d") + " 00:00:00"
 pass_date = (datetime.datetime.now() + datetime.timedelta(days=-train_day)).strftime("%Y-%m-%d") + " 00:00:00"
 
 now_timestamp = int(time.mktime(time.strptime(now_date, '%Y-%m-%d %H:%M:%S')))
 pass_timestamp = int(time.mktime(time.strptime(pass_date, '%Y-%m-%d %H:%M:%S')))
 
+# B A L R
+cluster_name = "A"
 query_cond_dic = {
     "start": pass_timestamp,
     "end": now_timestamp,
@@ -27,7 +29,7 @@ query_cond_dic = {
             "metric": "sys.error500.raw",
             # "downsample": "30m-avg",
             "tags": {
-                "cluster": "L",
+                # "cluster": cluster_name,
             }
         }
     ]
@@ -43,4 +45,4 @@ records = {data.get("tags").get("cluster") + "_" + data.get("tags").get("errorty
 df = pd.DataFrame(data=records)
 print(df.head(100))
 
-df.to_csv("./opentsdb_L.csv", sep=",", index=True, header=True)
+df.to_csv("./opentsdb_{cluster_name}.csv".format(cluster_name=cluster_name), sep=",", index=True, header=True)

@@ -16,6 +16,9 @@ print_br(df.describe(include='all'))
 print_line("查看缺少值和数据类型")
 print_br(df.info())
 
+print_line("查看每个字段是否有null")
+print_br(df.isnull().any())
+
 print_line("内存显示：index：索引占用的内存，deep：数据存储占用的内存")
 print_br(df.memory_usage(index=True, deep=True))
 

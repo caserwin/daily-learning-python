@@ -17,5 +17,8 @@ def reversed_cmp(x, y):
 
 
 # 默认的sorted
-print(sorted([36, 5, 12, 9, 21]))
-print(sorted([36, 5, 12, 9, 21], reversed_cmp))
+print(sorted([36, 5, 12, 9, 21], reverse=True))
+print(sorted([36, 5, 12, 9, 21], reverse=False))
+# print(sorted([36, 5, 12, 9, 21], reversed_cmp))
+
+

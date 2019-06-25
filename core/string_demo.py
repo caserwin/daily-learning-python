@@ -35,3 +35,6 @@ print("{} {}".format("hello", "world"))
 print("{1} {0} {1}".format("hello", "world"))
 # 设置关键字
 print('{name},{age}'.format(age=18, name='kzc'))
+
+ss = "123"
+print('Features that have coeffcient of 0 are: %s' % ss)
