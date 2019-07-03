@@ -2,11 +2,10 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2019-05-22 20:04
 # @Author  : erwin
-from sklearn.datasets import load_iris
+import matplotlib as mpl
 import xgboost as xgb
 from common.util_function import *
-from xgboost import plot_importance
-from matplotlib import pyplot as plt
+mpl.use('TkAgg')
 from sklearn.model_selection import train_test_split
 import pandas as pd
 from sklearn.feature_extraction import DictVectorizer

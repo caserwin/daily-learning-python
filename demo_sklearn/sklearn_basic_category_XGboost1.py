@@ -8,6 +8,7 @@ from common.pickle_helper import *
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction import DictVectorizer
 from xgboost import XGBClassifier
+from sklearn.preprocessing import OneHotEncoder
 
 # 显示所有列
 pd.set_option('display.max_columns', None)
@@ -36,8 +37,8 @@ X_test = vec.transform(X_test.to_dict(orient='record'))
 # print(vec.feature_names_)
 # print(type(X_train))
 
-print_line("4. 采用XGBoost")
-xgbc = XGBClassifier()
+print_line("4. 采用XGBoost分类")
+xgbc = XGBClassifier(n_estimators=100)
 xgbc.fit(X_train[:, [0, 1, 3, 4]], y_train)
 print(xgbc.score(X_test[:, [0, 1, 3, 4]], y_test))
 
@@ -50,3 +51,12 @@ print(vec.feature_names_)
 print(xgbc.feature_importances_)
 
 store_model(xgbc, "./model/xgboost.pkl")
+
+print_line("5. XGBoost 特征组合")
+train_new_feature = xgbc.apply(X_train[:, [0, 1, 3, 4]])  # 与 n_estimators 值相同
+print(train_new_feature.shape)
+# print("新训练集的样本个数", len(train_new_feature))  # 与 n_estimators 值相同
+# print("每个样本维度", len(train_new_feature[0]))
+xgbenc = OneHotEncoder()
+X_trans = xgbenc.fit_transform(train_new_feature)
+print(X_trans.shape)

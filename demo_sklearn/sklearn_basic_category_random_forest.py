@@ -7,6 +7,7 @@ from sklearn.ensemble import RandomForestClassifier
 import pandas as pd
 import numpy as np
 from common.util_function import *
+from sklearn.preprocessing import OneHotEncoder
 
 """
 https://blog.csdn.net/cherdw/article/details/54971771
@@ -47,3 +48,13 @@ print_line("3. 评估展示")
 preds = iris.target_names[test_pred]
 res = pd.crosstab(test['label'], preds, rownames=['actual'], colnames=['preds'])
 print_br(res)
+
+print_line("4. RF 特征组合")
+train_new_feature = clf.apply(train[features])  # 与 n_estimators 值相同
+print(train_new_feature.shape)
+# print("新训练集的样本个数", len(train_new_feature))  # 与 n_estimators 值相同
+# print("每个样本维度", len(train_new_feature[0]))
+xgbenc = OneHotEncoder()
+X_trans = xgbenc.fit_transform(train_new_feature)
+print(X_trans.shape)
+
