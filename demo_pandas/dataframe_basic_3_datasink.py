@@ -16,4 +16,4 @@ data = np.array([[1, 2, 3, 4],
                  [2, 3, 5, 9]])
 
 df = pd.DataFrame(data=data, index=['a', 'b', 'c'], columns=['A', 'B', 'C', 'D'])
-df.to_csv("./data/dataframe_16_datasink.csv", sep=",", index=False, header=False)
+df.to_csv("./data/dataframe_16_datasink.csv", sep=",", encoding="utf-8", index=False, header=False)

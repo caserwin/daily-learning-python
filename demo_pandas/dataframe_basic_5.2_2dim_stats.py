@@ -20,3 +20,14 @@ print_br(df.cov())
 
 print_line("相关系数")
 print_br(df.corr())
+
+print_line("分组统计")
+# import matplotlib.pyplot as plt
+
+df1 = pd.DataFrame(data={'A': [1, 2, 2.5, 3, 5, 4, 3, 2, 1, 4],
+                         'B': [2, 0, 2, 2, 0, 2, 2.5, 3, 5, 4]})
+print(df1.head())
+quartiles = pd.cut(df1.A, 3)
+grouped = df1.A.groupby(quartiles).count()
+print(grouped)
+# grouped.plot()
