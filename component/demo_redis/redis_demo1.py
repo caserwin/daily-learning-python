@@ -66,7 +66,7 @@ class RedisClient(object):
             res_ls.extend([json.loads(item) for item in v])
         return res_ls
 
-    def get_cache_data(self, key):
+    def get_cache_json_data(self, key):
         """
         :param key:
         :return: 查询，这里key是一个字符串
@@ -79,6 +79,25 @@ class RedisClient(object):
             res_ls.extend([json.loads(item) for item in v])
         return res_ls
 
+    def get_cache_data(self, key):
+        """
+        :param key:
+        :return: 查询，这里key是一个字符串
+        """
+        keys = self.redis_client.keys(key + "*")
+        if len(keys) == 0:
+            return [], []
+
+        pipe = self.redis_client.pipeline()
+        pipe.mget(keys)
+        value_ls = []
+        for v in pipe.execute():
+            value_ls.extend(v)
+        res_ls = []
+
+        for k, v in zip(keys, value_ls):
+            res_ls.append((k, v))
+        return res_ls
 
 if __name__ == '__main__':
     print(RedisClient().get_cache_bluk_data(
@@ -93,3 +112,8 @@ if __name__ == '__main__':
     print(RedisClient().get_cache_bluk_data("aa"))
 
     RedisClient().set_single_data("aa", 1)
+
+    res_ls = RedisClient().get_cache_data("yd.433e2bf1c55e481b9@163.com")
+    # keys, value_ls = RedisClient().get_cache_data("yd.6e3efbebd3cd49e5a@163.com")
+    for i in res_ls:
+        print(i)
