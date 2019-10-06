@@ -12,8 +12,7 @@ pd.set_option('display.width', 1000)
 matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('/Users/yidxue/mygit/daily-learning-python/demo_pandas/data/correlation-coefficient.csv', sep=",",
-                 header=None)
+df = pd.read_csv('./data/correlation-coefficient.csv', sep=",", header=None)
 df.columns = ['p_id', 'user_count', 'gender_0', 'gender_1', 'gender_2', 'v_type_0', 'v_type_1', 'v_type_2',
               'v_type_3', 'history_click', 'action_score', 'click_percent', 'day']
 
@@ -33,8 +32,10 @@ df = df[df['user_count'] > 1000]
 # print("history_click 和 click_percent相关系数  ", df.history_click.corr(df.click_percent))
 
 print("history_click, action_score", (df.history_click + df.action_score).corr(df.click_percent))
-print("history_click, action_score, v_type_1", (df.history_click + df.action_score + df.v_type_1).corr(df.click_percent))
-print("history_click, action_score, v_type_1, v_type_2", (df.history_click + df.action_score + df.v_type_1 + df.v_type_2).corr(df.click_percent))
+print("history_click, action_score, v_type_1",
+      (df.history_click + df.action_score + df.v_type_1).corr(df.click_percent))
+print("history_click, action_score, v_type_1, v_type_2",
+      (df.history_click + df.action_score + df.v_type_1 + df.v_type_2).corr(df.click_percent))
 
 plt.scatter(df.history_click.tolist(), df.click_percent.tolist(), label='1')
 plt.show()
