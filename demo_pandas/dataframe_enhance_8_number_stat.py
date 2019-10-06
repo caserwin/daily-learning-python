@@ -3,8 +3,11 @@
 # @Time : 2019/9/25 9:59 AM
 # @Author : Erwin
 import pandas as pd
+pd.set_option('display.max_rows', 500)
+pd.set_option('display.max_columns', 500)
+pd.set_option('display.width', 1000)
 
-df = pd.read_csv('/Users/yidxue/mygit/daily-learning-python/demo_pandas/data/user_click_count.csv', sep=",",
+df = pd.read_csv('/Users/yidxue/mygit/daily-learning-python/demo_pandas/data/count-stat.csv', sep=",",
                  header=None)
 df.columns = ['user', 'stat']
 
@@ -31,5 +34,3 @@ def age_map_func(x):
 
 df.stat_map = df.stat.map(age_map_func)
 print(df.stat_map.value_counts())
-
-# 画图看结果

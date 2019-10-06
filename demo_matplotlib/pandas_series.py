@@ -1,6 +1,9 @@
-import matplotlib.pyplot as plt
+import matplotlib
 from matplotlib.font_manager import FontProperties
 import pandas as pd
+
+matplotlib.use('TkAgg')
+import matplotlib.pyplot as plt
 
 myfont = FontProperties(fname='/Library/Fonts/Songti.ttc')
 plt.figure(figsize=(10, 4))

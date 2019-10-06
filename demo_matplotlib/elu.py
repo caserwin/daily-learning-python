@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2019/1/19 下午2:57
 # @Author  : yidxue
-import matplotlib.pyplot as plt
+import matplotlib
 import numpy as np
 import math
+
+matplotlib.use('TkAgg')
+import matplotlib.pyplot as plt
 
 a = 0.3
 

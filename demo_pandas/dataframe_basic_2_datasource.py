@@ -28,4 +28,6 @@ print_line("读取 Excel 数据集")
 df1 = pd.read_excel("excel_file")
 df2 = pd.read_table('/Users/cisco/Desktop/1.txt', sep=' ', header=None, dtype=str, na_filter=False)
 df3 = pd.read_csv('/Users/cisco/Desktop/2018-04-16.csv', sep="\t", header=None)
+# df3.columns = ['C', 'D', 'E']
+
 # pd.read_csv('./data/opentsdb_L.csv', sep = ',',index_col=0)  # 第1列作为 index.

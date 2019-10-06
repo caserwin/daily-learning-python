@@ -1,56 +1,40 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# @Time    : 2019-04-15 20:28
-# @Author  : erwin
-from functools import reduce
-
-import numpy as np
 import pandas as pd
+from pandas import *
+
 from common.util_function import *
 
-np.random.seed(1)
+"""
+参考：https://stackoverflow.com/questions/14529838/apply-multiple-functions-to-multiple-groupby-columns
+"""
 
-df = pd.DataFrame({'A': ['foo', 'bar', 'foo', 'bar',
-                         'foo', 'bar', 'foo', 'foo'],
-                   'B': ['one', 'one', 'two', 'three',
-                         'two', 'two', 'one', 'three'],
-                   'C': np.random.randn(8),
-                   'D': np.random.randn(8)})
-print_line("原始数据")
-print_br(df)
+# np.random.seed(1)
 
-print_line("聚合示例1")
-print_br(df.groupby('A').sum())
-print_br(df.groupby(['A', 'B']).sum())
-print_br(df.groupby('A').count())  # 等价于 df.A.value_counts()
+df = pd.DataFrame(np.random.rand(8, 4), columns=list('abcd'))
+df['group'] = [0, 0, 1, 1, 0, 2, 1, 1]
 
-print_line("聚合示例2")
+print(df)
+
+print_line("apply 方法1 -- 传入dict，转Pandas Series")
 
 
-def sum(series):
-    return reduce(lambda x, y: x + y, series)
+def f(x):
+    # 这里 x 是分组后的每个 dataframe
+    d = {'a_sum': x['a'].sum(), 'a_max': x['a'].max(), 'b_mean': x[x['b'] > 0.5]['b'].mean(),
+         'c_d_prodsum': (x['c'] * x['d']).sum()}
+    return pd.Series(d, index=['a_sum', 'a_max', 'b_mean', 'c_d_prodsum'])
 
 
-def sum_multi(s1, s2):
-    count = 0
-    for i, j in zip(s1, s2):
-        count = count + i * j
-    return count / len(s1)
+print(df.groupby('group').apply(f))
+
+print_line("apply 方法2 -- 传入list，转Pandas Series")
 
 
-res_df = df.groupby(['A']).agg({
-    'C': sum,
-    'D': sum,
-})
+def f_mi(x):
+    d = [x['a'].sum(), x['a'].max(), x['b'].mean(), (x['c'] * x['d']).sum()]
+    return pd.Series(d, index=['a_sum', 'a_max', 'b_mean', 'c_d_prodsum'])
 
-print_br(res_df)
 
-print_line("分组统计")
-df1 = pd.DataFrame(data={'A': [1, 2, 2.5, 3, 5, 4, 3, 2, 1, 4],
-                         'B': [2, 0, 2, 2, 0, 2, 2.5, 3, 5, 4]})
-df1["C"] = pd.cut(df1.A, 3)
-print(df1)
+print(df.groupby('group').apply(f_mi))
 
-print("========")
-grouped = df1.A.groupby(df1["C"]).count()
-print(grouped)
+print_line("apply 方法3 -- 暂时不清楚 df.a.groupby(list) 形式的apply 以上两种写法怎么实现")
+print(df.a.groupby(df['group']).apply(lambda x: x.count()))

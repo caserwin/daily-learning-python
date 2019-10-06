@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2019/1/19 下午1:54
 # @Author  : yidxue
+import matplotlib
+import numpy as np
+
+matplotlib.use('TkAgg')
 
 import matplotlib.pyplot as plt
-import numpy as np
 
 
 def sigmoid(x):

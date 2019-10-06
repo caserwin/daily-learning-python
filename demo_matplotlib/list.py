@@ -2,6 +2,10 @@
 # @Time    : 2019/1/23 下午4:29
 # @Author  : yidxue
 import numpy as np
+import matplotlib
+
+matplotlib.use('TkAgg')
+
 import matplotlib.pyplot as plt
 
 s1 = np.array([1, 2, 0, 1, 1, 2, 0, 1, 1, 2, 0, 1, 1, 2, 0, 1])
