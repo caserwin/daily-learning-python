@@ -2,8 +2,9 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2019-04-15 10:38
 # @Author  : erwin
-import pandas as pd
 import numpy as np
+import pandas as pd
+
 from common.util_function import *
 
 raw_data = {'name': ['Jason', 'Molly', np.nan, np.nan, np.nan],
