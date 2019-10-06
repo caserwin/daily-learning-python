@@ -2,10 +2,11 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2019-04-15 20:28
 # @Author  : erwin
-import pandas as pd
-import numpy as np
-from common.util_function import *
 from functools import reduce
+
+import numpy as np
+import pandas as pd
+from common.util_function import *
 
 np.random.seed(1)
 
@@ -45,11 +46,11 @@ res_df = df.groupby(['A']).agg({
 print_br(res_df)
 
 print_line("分组统计")
-# import matplotlib.pyplot as plt
-
 df1 = pd.DataFrame(data={'A': [1, 2, 2.5, 3, 5, 4, 3, 2, 1, 4],
                          'B': [2, 0, 2, 2, 0, 2, 2.5, 3, 5, 4]})
-print(df1.head())
-quartiles = pd.cut(df1.A, 3)
-grouped = df1.A.groupby(quartiles).count()
+df1["C"] = pd.cut(df1.A, 3)
+print(df1)
+
+print("========")
+grouped = df1.A.groupby(df1["C"]).count()
 print(grouped)
