@@ -3,6 +3,7 @@
 .idea/
 .DS_Store
 *.log
+tf_demo*/*
 
 __pycache__/
 *.py[cod]
