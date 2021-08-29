@@ -6,7 +6,7 @@ import tensorflow as tf
 """
 占位符的 Saver 保存示例
 """
-model_name = "./tf_demo2_ckpt_saver_sess_feed_dict/model.ckpt"
+model_name = "./model_save/tf_demo2_ckpt_saver_sess_feed_dict/model.ckpt"
 
 
 def feed_dict_save():

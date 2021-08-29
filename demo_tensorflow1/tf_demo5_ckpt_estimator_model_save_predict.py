@@ -13,7 +13,7 @@ from demo_tensorflow1 import iris_data
 parser = argparse.ArgumentParser()
 parser.add_argument('--batch_size', default=100, type=int, help='batch size')
 parser.add_argument('--train_steps', default=1000, type=int, help='number of training steps')
-model_dir_ckpt = "./tf_demo5_ckpt_estimator_model_save_predict/"
+model_dir_ckpt = "./model_save/tf_demo5_ckpt_estimator_model_save_predict/"
 """
 参考：https://github.com/tensorflow/models/blob/r1.11/samples/core/get_started/custom_estimator.py
 """

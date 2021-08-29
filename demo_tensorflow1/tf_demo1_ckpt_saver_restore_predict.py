@@ -12,7 +12,7 @@ import numpy as np
     3. 通过 import_meta_graph 方式，恢复模型，并且做预测。
 """
 global_step = 1000
-_model_path = './tf_demo1_ckpt_saver_restore_predict/model.ckpt'
+_model_path = './model_save/tf_demo1_ckpt_saver_restore_predict/model.ckpt'
 
 
 def save_model(model_path):

@@ -3,7 +3,8 @@
 .idea/
 .DS_Store
 *.log
-tf_demo*/*
+*/*
+model_save/*
 
 __pycache__/
 *.py[cod]

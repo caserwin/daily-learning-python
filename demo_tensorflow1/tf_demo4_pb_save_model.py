@@ -7,7 +7,7 @@ import tensorflow as tf
 """
 变量的 Saver 保存示例
 """
-model_name = './tf_demo4_pb_save_model/model.ckpt'
+model_name = './model_save/tf_demo4_pb_save_model/model.ckpt'
 
 
 def initialize_var_save():
