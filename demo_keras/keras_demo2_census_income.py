@@ -26,7 +26,7 @@ from keras.optimizers import Adam
 from keras.utils import to_categorical
 from sklearn.metrics import roc_auc_score
 
-from demo_tensorflow2.keras.model.mmoe import MMoE
+from demo_keras.model.mmoe import MMoE
 
 SEED = 1
 
@@ -105,7 +105,7 @@ def data_preparation():
 
     # Load the dataset in Pandas
     train_df = pd.read_csv(
-        'demo/keras_test/data/census-income.data.gz',
+        '~/dataset/census-income.data.gz',
         # path[0],
         delimiter=',',
         header=None,
@@ -113,7 +113,7 @@ def data_preparation():
         names=column_names
     )
     other_df = pd.read_csv(
-        'demo/keras_test/data/census-income.test.gz',
+        '~/dataset/census-income.test.gz',
         # path[1],
         delimiter=',',
         header=None,

@@ -3,7 +3,7 @@
 # @Time : 2021/8/28 1:44 PM
 # @Author : Erwin
 from keras.models import load_model
-from demo_tensorflow2.keras.model.mmoe import MMoE
+from demo_keras.model.mmoe import MMoE
 import keras as k
 import numpy as np
 
