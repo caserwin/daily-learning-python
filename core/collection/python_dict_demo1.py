@@ -21,6 +21,11 @@ print(dict(zip(keys, vals)))
 print_line("基于列表推导生成字典")
 print({item[1]: item[0] for item in dic1.items()})
 
+print_line("基于列表推导+元组生成字典")
+keys = ['spam', 'eggs', 'toast']
+vals = [1, 3]
+print(dict(map(lambda x: (x[0],x), keys)))
+
 print_line("字典添加元素")
 dic1 = {"a": 1, "b": 2, "c": 3}
 dic1.setdefault('e', 5)

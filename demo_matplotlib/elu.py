@@ -12,7 +12,7 @@ a = 0.3
 
 
 def elu(x):
-    # 直接返回sigmoid函数
+    # 直接返回sigmoid函数l
     return [i if (i > 0) else a * (math.exp(i) - 1) for i in x]
 
 
